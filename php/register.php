@@ -54,7 +54,7 @@
             <h1><span class = "title">  Register account</span></h1>
             <h2><span class = "title">  Students</span></h2>
             <br>
-            <form action = "login1.php" method = "GET">
+            <form action = "login.php" method = "GET">
             <h6><span class = "conform">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-outline-light btn-sm"> Log In </button></span></h6><br>
             </form>
             <form enctype="multipart/form-data" action="SignupProcess.php" method="POST">
@@ -75,9 +75,7 @@
             <option value="science and technology">science and technology</option> 
             </select></span><br> <br>
             <span class = "info"> Major&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "major"> </span><br><br>
-            <h10><span class = "file">&nbsp;&nbsp;Upload your file:&nbsp;&nbsp;</span></h10>
-            &nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="uploaded_file"></input><br/><br><br>
-            <hr>
+            
   
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-success"> Signup </button><br>
             </form>

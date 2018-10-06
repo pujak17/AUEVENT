@@ -14,6 +14,7 @@
             background-size: 1270px 760px;
     
             } 
+            
             .heading{color: #E5EDEE;}
             .title {color: #E76D3C;}
             .info {color: #1B3963;}
@@ -95,13 +96,13 @@
         <br><h2><span class = "title"> LOG IN </span></h2><br>
         <img src ="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" height="70" width="70" alt = "account"><br><br>
 
-        <form action = "" method = "GET" name = "login">
+        <form action = "staff_index.php" method = "GET" name = "login">
         <span class = "info">AU ID &nbsp;&nbsp;&nbsp; : <input type = "text" name = "ID"></span><br><br>
         <span class = "info">Password : <input type = "text" name = "userPassword"></span><br><br>
         <p><span class = "account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button name = "submit" value ="submit" type = "submit" class="btn btn-primary"> Log In </button><br><br><br>
         </form>
-        <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="signup.php" class="btn btn-outline-danger btn-sm"> + New Account</a></div>
+        <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="staffsregister.php" class="btn btn-outline-danger btn-sm"> + New Account</a></div>
         <p><span class = "fail">&nbsp;&nbsp;&nbsp; New to the place? </span></p>
         
         <?php 

@@ -46,7 +46,7 @@
             <h1><span class = "title">  Register account</span></h1>
             <h2><span class = "title">  Staff</span></h2>
             <br>
-            <form action = "login1.php" method = "GET">
+            <form action = "loginstaff.php" method = "GET">
             <h6><span class = "conform">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-outline-light btn-sm"> Log In </button></span></h6><br>
             </form>
             <form enctype="multipart/form-data" action="SignupProcess.php" method="POST">
