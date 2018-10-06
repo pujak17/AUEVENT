@@ -120,28 +120,28 @@
             </div>
        
             <div class="fluid-container text-center">
-            <br><h1> <span class = "heading"> CREATE NEW EVENT</span> </h1>
-            <div class ="box">
+                <br><h1> <span class = "heading"> CREATE NEW EVENT</span> </h1>
+                <div class ="box">
 
             
-            <form enctype="multipart/form-data" action="index.php" method="GET">
+                    <form enctype="multipart/form-data" action="index.php" method="GET">
         
-            <br><span class = "info"> Event name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventName"> </span><br><br>
-            <span class = "info"> Event Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "date" name = "eventDate"> </span><br><br>
-            <span class = "info"> Event Time: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventTime"> </span><br><br>
-            <span class = "info"> Event Venue: &nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventVenue"> </span><br><br>
-            <span class = "info"> Event Description : <input type = "text" name = "description" style="font-size: 18pt; height: 150px; width:200px;"> </span><br><br>
-            <span class = "info"> Link     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  <input type="url" name="link"> </span><br><br>
-           
-            <h10><span class = "file">&nbsp;&nbsp;Upload your file:&nbsp;&nbsp;</span></h10>
-            &nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="uploaded_file"></input><br/><br><br>
+                    <br><span class = "info"> Event name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventName"> </span><br><br>
+                    <span class = "info"> Event Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "date" name = "eventDate"> </span><br><br>
+                    <span class = "info"> Event Time: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventTime"> </span><br><br>
+                    <span class = "info"> Event Venue: &nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventVenue"> </span><br><br>
+                    <span class = "info"> Event Description : <input type = "text" name = "description" style="font-size: 18pt; height: 150px; width:200px;"> </span><br><br>
+                    <span class = "info"> Link     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  <input type="url" name="link"> </span><br><br>
+                
+                    <h10><span class = "file">&nbsp;&nbsp;Upload your file:&nbsp;&nbsp;</span></h10>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="uploaded_file"></input><br/><br><br>
     
   
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-success"> + Create New </button><br>
-            </form>
-            <br><div><h3><a href = "index.php"  class="btn btn-outline-danger btn-sm">Cancel</a></div></h3><br />
-            </div>
-            </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-success"> + Create New </button><br>
+                    </form>
+                    <br><div><h3><a href = "index.php"  class="btn btn-outline-danger btn-sm">Cancel</a></div></h3><br />
+                </div>
+           </div>
             
         </head>
     </html>
