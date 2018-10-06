@@ -96,7 +96,7 @@
         <br><h2><span class = "title"> LOG IN </span></h2><br>
         <img src ="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" height="70" width="70" alt = "account"><br><br>
 
-        <form action = "staff_index.php" method = "GET" name = "login">
+        <form action = "staff_home.php" method = "GET" name = "login">
         <span class = "info">AU ID &nbsp;&nbsp;&nbsp; : <input type = "text" name = "ID"></span><br><br>
         <span class = "info">Password : <input type = "text" name = "userPassword"></span><br><br>
         <p><span class = "account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
