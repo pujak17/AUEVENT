@@ -8,7 +8,8 @@
                  body {
                     background-image: url('https://pre00.deviantart.net/76c3/th/pre/i/2016/036/0/3/abac_university_by_tairenar-d9qkzy6.jpg');
                     background-repeat: no-repeat;
-                    background-size: 1270px 900px;
+                    background-size: cover;
+                    background-position: center;
                 }
                 .title{color: #0076DA;}
                 hr {height: 2;
