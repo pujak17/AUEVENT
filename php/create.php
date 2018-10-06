@@ -27,14 +27,15 @@
                         padding-top: 30px;}
             </style>
             <div class="fluid-container text-center">
-            <br><h1> <span class = "heading"> CREATE NEW </span> </h1>
+            <br><h1> <span class = "heading"> CREATE NEW EVENT
+            </span> </h1>
             <div class ="box">
 
             
             <form enctype="multipart/form-data" action="createProcess.php" method="POST">
         
-            <br><span class = "info"> User ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "userId"> </span><br><br>
-            <span class = "info"> User Name : <input type = "text" name = "userName"> </span><br><br>
+            <br><span class = "info"> Event Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "userId"> </span><br><br>
+            <span class = "info"> Event type <input type = "text" name = "userName"> </span><br><br>
             <span class = "info"> Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "email"> </span><br><br>
             <span class = "info"> Password &nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "password"> </span><br><br><br>
             

@@ -1,5 +1,5 @@
 <?php session_Start(); ?>
-<?php include('databaseConfig.php'); ?>
+
 <!DOCTYPE HTML>
     <html>
         <head>
@@ -8,36 +8,52 @@
         <body>
         
         <style>
-        body {
-            background-image: url("http://photo.sunrisevietnam.com//2016/11/25/tl-1.jpg");
-            background-repeat: no-repeat;
-            background-size: 1270px 760px;
-    
+        body,html {
+            height: 100%;
+            margin: 0;
             } 
-            .heading{color: #E5EDEE;}
+            .bg-image {
+  
+            background-image: url("http://photo.sunrisevietnam.com//2016/11/25/tl-1.jpg");
+              filter: blur(8px);
+              -webkit-filter: blur(8px);
+              height: 100%; 
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+          }
+            .heading{color: #E5EDEE;
+            }
             .title {color: #E76D3C;}
             .info {color: #1B3963;}
             .home {color: #DD2358;}
             .fail {color: #D22743;}
             .box {border-style:solid;
-            background-color:rgb(229, 237, 238, 0.5);
+                position: absolute;
+            background-color:rgb(229, 237, 238, 0.7);
             border-color: #F3C370;
             width:50%;
             border-radius:5%;
             margin:auto;
-            margin-top:50px;
+
             padding-bottom: 30px;
-            padding-top: 30px;}
+            padding-top: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            z-index: 2;
+            text-align: center;
+        }
             .account{color: #286610;}
         </style>
      </head>
 
-    
+    <div class="bg-image"></div>
     <div class = "fluUserID-container text-center";>
-    <h2><span class= "heading"> AU EVENTS </span></h2>
-    <h3><span class= "heading"> Login  </span></h3>
+
     <div class = "box">
-    
+    <h2 class= "heading"><span> AU EVENTS </span></h2>
+
 
     <?php 
 
