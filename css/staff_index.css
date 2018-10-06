@@ -9,7 +9,9 @@ body {
 
 .title{color: #492FAB;}
 
-.heading{color: #313756;}
+.heading{color: #313756;
+    font-size: 30px;
+ }
 .home{color :  #0080ff;}
 .conform{color : #EC7063;}
 .info{color: #33448c;
@@ -29,14 +31,23 @@ body {
 .details {
     color: #37406B;
     font-weight: bold;
+    font-size: 30px;
+
+}
+.resize {
+    width: 80px;
+    height: auto;
+  }
+
+.detail {
+    color: #37406B;
+    font-weight: bold;
     font-size: 20px;
 
 }
-
 .font{
     color: #910000;
-    font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
 
 }
 .text {

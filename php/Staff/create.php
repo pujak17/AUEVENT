@@ -16,7 +16,7 @@
                 <div class ="box">
 
             
-                    <form enctype="multipart/form-data" action="staff_myevents.php" method="GET">
+                    <form enctype="multipart/form-data" action="staff_myevents.php" method="POST">
                     <div class="fluid-container text-center">
                     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "info"> Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventName"> </span><br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "info">  Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "date" name = "eventDate"> </span><br><br>
@@ -24,13 +24,13 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "info">  Venue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "eventVenue"> </span><br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "info"> Description: <input type = "text" name = "description" style="font-size: 10pt; height: 100px; width:230px;"> </span><br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "info"> Link  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  <input type="url" name="link"> </span><br><br>
-                
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h10><span class = "file">&nbsp;&nbsp;Upload your file:&nbsp;&nbsp;</span></h10>
-                    <input type="file" name="uploaded_file"></input><br>
-</div>
-  
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-lg btn-success"> + Create New </button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "info"> Select image to upload:</span><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <input type="file" name="fileToUpload" id="fileToUpload"><br/><br><br>
+        
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value = "Upload file " type = "submit" class="btn btn-lg btn-success"> + Create New </button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "index.php"  class="btn btn-lg btn-danger" disabled="disabled">Cancel</a>
+                    
                     </form>
                     <div><h3></div></h3><br />
                 </div>
