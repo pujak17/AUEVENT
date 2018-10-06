@@ -1,0 +1,35 @@
+ body {
+     background-color: #ECEDF7}
+
+.title{
+    color: #492FAB;}
+
+.heading{
+    color: #76448A;}
+
+.home{
+    color :  #0080ff;}
+
+.conform{
+    color : #EC7063;}
+
+.info{
+    color: #5499C7;}
+
+.file{
+    color : #EC7063;}
+
+.button{
+    color: #ffffff;
+       border-radius:25%;
+       background-color: #00b386;}
+       
+.box {border-style:solid;
+     background-color:#e6eeff;
+     border-color:  #ccccff;
+     width:50%;
+     border-radius:5%;
+     margin:auto;
+     margin-top:50px;
+     padding-bottom: 30px;
+     padding-top: 30px;}
