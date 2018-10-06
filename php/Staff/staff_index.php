@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <link href="..\css\index.css" type="text/css" rel="stylesheet">
+    <link href="..\..\css\staff_index.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,13 +21,16 @@
                 <div class="col-xs-6">
                     <ul class="nav nav-pills ">
                         <li class="pull-right">
-                            <a class="top-button" href="..\php\login.php">LOG OUT</a>
+                            <a class="top-button" href="loginstaff.php">LOG OUT</a>
                         </li>
                         <li class="pull-right">
-                            <a class="top-button" href="myevent.php">MY EVENTS</a>
+                            <a class="top-button" href="staff_myevents.php">MY EVENTS</a>
+                        </li>
+                        <li class="pull-right">
+                            <a class="top-button" href="create.php">CREATE</a>
                         </li>
                         <li class="pull-right top-button">
-                            <a class="top-button" href="..\php\home.php">HOME</a>
+                            <a class="top-button" href="staff_home.php">HOME</a>
                         </li>
                     </ul>
                 </div>
@@ -78,8 +81,8 @@
                     </div>
                 </div>
                 <div class="col-xs-8"><br>
-                <div class="button btn-group-lg" align="center">
-                        <a href="index.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="button btn-group-lg" align="center">
+                        <button name="submit" value="submit" type="submit" class="btn btn-primary btn-lg active"> recent Events</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button name="submit" value="submit" type="submit" class="btn btn-default btn-lg active"> Past Events</button>
                         <br>
                         <br>
@@ -88,6 +91,7 @@
             </div>
         </div>
     
-        
+    
   
+   </div>
 </body>

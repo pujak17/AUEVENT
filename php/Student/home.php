@@ -1,5 +1,5 @@
 <?php include('index.php') ?>
-<div "fluUserID-container text-right">
+
         <div class ="box text-center">
             <span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Freshy Night<?php echo $_GET["eventName"]; ?></span><br>
             <span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018<?php echo $_GET["eventDate"]; ?></span><br>
@@ -12,9 +12,8 @@
                 <a href = "myevent.php" class="btn btn-danger"> Not Attending</a>
             </div>
        </div>
-   </div>
 
-<div "fluUserID-container text-right">
+
         <div class ="box text-center">
             <span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Career Week<?php echo $_GET["eventName"]; ?></span><br>
             <span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">6th oct 2018<?php echo $_GET["eventDate"]; ?></span><br>
@@ -27,4 +26,3 @@
                 <a href = "myevent.php" class="btn btn-danger"> Not Attending</a>
             </div>
        </div>
-</div>

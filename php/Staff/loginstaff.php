@@ -1,44 +1,42 @@
 <?php session_Start(); ?>
-
 <!DOCTYPE HTML>
     <html>
         <head>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><html>
        
-        <body>
-        
+       
         <style>
         body,html {
             height: 100%;
             margin: 0;
+    
             } 
-            .bg-image {
-  
-            background-image: url("http://photo.sunrisevietnam.com//2016/11/25/tl-1.jpg");
-              filter: blur(8px);
-              -webkit-filter: blur(8px);
+            .bg-image{
+            	background-image: url("http://photo.sunrisevietnam.com//2016/11/25/tl-1.jpg");
+            filter: blur(3px);
+              -webkit-filter: blur(3px);
               height: 100%; 
               background-position: center;
               background-repeat: no-repeat;
               background-size: cover;
-          }
-            .heading{color: #E5EDEE;
             }
+            
+            .heading{color: #E5EDEE;}
             .title {color: #E76D3C;}
             .info {color: #1B3963;}
             .home {color: #DD2358;}
             .fail {color: #D22743;}
             .box {border-style:solid;
-                position: absolute;
-            background-color:rgb(229, 237, 238, 0.7);
+            background-color:rgb(229, 237, 238, 0.5);
             border-color: #F3C370;
             width:50%;
             border-radius:5%;
             margin:auto;
-
+            margin-top:50px;
             padding-bottom: 30px;
             padding-top: 30px;
-            top: 50%;
+         	position: absolute;
+            top: 43%;
             left: 50%;
             transform: translate(-50%, -50%); 
             z-index: 2;
@@ -48,12 +46,13 @@
         </style>
      </head>
 
-    <div class="bg-image"></div>
+     <body>
+        <div class="bg-image"></div>
     <div class = "fluUserID-container text-center";>
-
+   
     <div class = "box">
-    <h2 class= "heading"><span> AU EVENTS </span></h2>
-
+    <h2><span class= "heading"> AU EVENTS </span></h2>
+    <h3><span class= "heading"> Login  </span></h3>
 
     <?php 
 
@@ -111,13 +110,13 @@
         <br><h2><span class = "title"> LOG IN </span></h2><br>
         <img src ="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" height="70" width="70" alt = "account"><br><br>
 
-        <form action = "home.php" method = "GET" name = "login">
+        <form action = "staff_index.php" method = "GET" name = "login">
         <span class = "info">AU ID &nbsp;&nbsp;&nbsp; : <input type = "text" name = "ID"></span><br><br>
         <span class = "info">Password : <input type = "text" name = "userPassword"></span><br><br>
         <p><span class = "account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button name = "submit" value ="submit" type = "submit" class="btn btn-primary"> Log In </button><br><br><br>
         </form>
-        <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.php" class="btn btn-outline-danger btn-sm"> + New Account</a></div>
+        <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="staffsregister.php" class="btn btn-outline-danger btn-sm"> + New Account</a></div>
         <p><span class = "fail">&nbsp;&nbsp;&nbsp; New to the place? </span></p>
         
         <?php 
