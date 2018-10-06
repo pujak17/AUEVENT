@@ -36,17 +36,6 @@ body {
     background-size: auto;
 }
 
-.menu {
-    border-style: solid;
-    position: absolute;
-    background-color: #EBEDF4;
-    border-color: #EBEDF4;
-    width: 60%;
-    border-radius: 1%;
-    padding-bottom: 20px;
-
-}
-
 .title {
     color: #FFFFFF;
     font-weight: bold;
@@ -60,6 +49,27 @@ body {
     color: #fff;
     font-weight: bold;
 }
+
+.menu {
+    border-style: solid;
+    position: absolute;
+    background-color: #EBEDF4;
+    border-color: #EBEDF4;
+    width: 60%;
+    border-radius: 1%;
+    padding-bottom: 20px;
+
+}
+
+.main{
+    margin-top: 10px;
+}
+
+.category-button{
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
 
 .font-weight-bold {
     color: #563D7C;

@@ -5,10 +5,17 @@
         <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <style>
-                 body {
-                    background-image: url('https://pre00.deviantart.net/76c3/th/pre/i/2016/036/0/3/abac_university_by_tairenar-d9qkzy6.jpg');
+                 body,html {
+                    height:100%;
+                    margin:0;
+                }
+                .bg-image{
+                    background-image: url("https://pre00.deviantart.net/76c3/th/pre/i/2016/036/0/3/abac_university_by_tairenar-d9qkzy6.jpg");
                     background-repeat: no-repeat;
-                    background-size: 1270px 900px;
+                    background-size: cover;
+                    background-position: center;
+                    filter: blur(8px);
+                    -webkit-filter: blur(8px);
                 }
                 .title{color: #0076DA;}
                 hr {height: 2;
@@ -36,6 +43,9 @@
                         padding-bottom: 30px;
                         padding-top: 30px;}
             </style>
+        </head>
+         <body>
+            <div class="bg-image"></div>
             <div class="fluid-container text-center">
             <br><h1> <span class = "heading"> Welcome to AU Events &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href="login1.php">
             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/ABAC_Logo.png/220px-ABAC_Logo.png" alt="HOME" style="width:72px;height:72px;border:0;"></a><br></h1><br>
@@ -86,5 +96,6 @@
   </div>
 </div>
             </div>
-        </head>
+</body>
+
     </html>

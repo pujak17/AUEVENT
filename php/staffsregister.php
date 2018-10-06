@@ -8,7 +8,8 @@
                  body {
                     background-image: url('https://media.istockphoto.com/photos/exterior-view-of-a-catholic-church-at-assumption-university-thailand-picture-id519273394?k=6&m=519273394&s=612x612&w=0&h=RCWjpemzTUotFxP-P3KE_CkSMkaTKRhRDg2pLn29Kb4=');
                     background-repeat: no-repeat;
-                    background-size: 1260px 950px;
+                    background-position: center;
+                    background-size: cover;
                 }
                 .title{color: #0076DA;}
                 hr {height: 2;
