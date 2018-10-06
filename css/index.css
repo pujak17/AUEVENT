@@ -4,6 +4,29 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
+.details {
+    color: #C9000D;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.text {
+    color: #4267B2;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.box{
+    border-style:solid;
+    background-color:#D7E5F2;
+    border-color:  #D7E5F2;
+    width:40%;
+    border-radius:5%;
+    margin:auto;
+    margin-top:50px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
 
 .header {
     border: 2px solid black;
