@@ -5,7 +5,7 @@
 <div class="buttons"><br>
                 <div class="button btn-group-lg" align="center">
                         <a href="index.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="staff_pastevents.php" class="btn btn-default btn-lg active"> Past Events</a>
+                        <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
                         <br>
                         <br>
    
