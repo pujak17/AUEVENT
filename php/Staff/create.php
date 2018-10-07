@@ -27,7 +27,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "info"> Select image to upload:</span><br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp; <input type="file" name="fileToUpload" id="fileToUpload"><br/><br><br>
         
-                    </div>
+                    /* Main content */</div>  
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value = "Upload file " type = "submit" class="btn btn-lg btn-success"> + Create New </button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "index.php"  class="btn btn-lg btn-danger" disabled="disabled">Cancel</a>
                     
