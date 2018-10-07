@@ -9,10 +9,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<div class="main">
+<div class="buttons"><br>
+                <div class="button btn-group-lg" align="center">
+                        <a href="index.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
+                        <br>
+                        <br>
+   
+                </div>           
+</div>
 
         <h2><span class = "heading">&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
-            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Details of students Attenting</span> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
-            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a href = "staff_myevents.php" class="btn btn-sm btn-danger">Go Back</a> <br></h2>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Details of students Attenting</span> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+      <a href = "staff_myevents.php" class="btn btn-sm btn-danger">Go Back</a> <br></h2>
         
         <div class ="box">
             <span class = "details">  &nbsp; &nbsp; &nbsp;Event name: </span><span class = "font">Freshy Night</span><br>
@@ -20,36 +30,36 @@
   <table class="table">
     <thead class = "thead-dark">
       <tr>
-        <th>#</th>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Faculty</th>
-        <th>Major </th>
+        <th><span class = "detail">#</span></th>
+        <th><span class = "detail">ID</span></th>
+        <th><span class = "detail">Name</span></th>
+        <th><span class = "detail">Faculty</span></th>
+        <th><span class = "detail">Major </span></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>1</td>
-        <td>591012</td>
-        <td>Pitt</td>
-        <td>science and technology</td>
-        <td>computer science</td>
+        <td><span class = "text">1</span</td>
+        <td><span class = "text">591012</span></td>
+        <td><span class = "text">Pitt</span></td>
+        <td><span class = "text">science and technology</span></td>
+        <td><span class = "text">computer science<span></td>
       </tr>
     </tbody>
     <tbody>
       <tr>
-        <td>2</td>
-        <td>582413</td>
-        <td>Alex</td>
-        <td>science and technology</td>
-        <td>Information technology</td>
+        <td><span class = "text">2</span></td>
+        <td><span class = "text">582413</span></td>
+        <td><span class = "text">Alex</span></td>
+        <td><span class = "text">science and technology</span></td>
+        <td><span class = "text">Information technology</span></td>
       </tr>
       <tr>
-        <td>3</td>
-        <td>587591</td>
-        <td>Hajib Amzad khan</td>
-        <td>BBA</td>
-        <td>Finance</td>
+        <td><span class = "text">3</span></td>
+        <td><span class = "text">587591</span></td>
+        <td><span class = "text">Hajib Amzad khan</span></td>
+        <td><span class = "text">BBA</span></td>
+        <td><span class = "text">Finance</span></td>
       </tr>
     </tbody>
   </table>
@@ -63,3 +73,4 @@
        </div>
    </div>
 </body>
+</div>
