@@ -13,7 +13,7 @@
 <body>
     <div>
         <div class="header container-fluid" align="center">
-            <div class="row">
+            <div class="header">
                 <div class="col-xs-6 text-left">
                     <h1><img src="https://registrar.au.edu/wp-content/uploads/2017/01/ABAC_logo_footer_white.png" alt="HOME" style="width:82px;height:82px;border:0;"><span class = "title">&nbsp;AU EVENTS </span>
                 </h1>
@@ -37,17 +37,17 @@
             </div>
         </div>
         <div>
-            <div class="row">
+            <div class="sidenav">
                 <div class="col-xs-4 text-center">
                     <div align="center" class="menu">
                         <div "fluUserID-container text-center">
                             <h2><span class = ".font-weight-bold">&nbsp;&nbsp; <br><br>Catagory &nbsp; &nbsp;</span></h2>
                             <br>
                             <div class="btn-group-vertical btn-group-lg" role="group">
-                                <button type="button" class="btn btn-primary">Mandatory</button> &nbsp;
-                                <button type="button" class="btn btn-success">Entertainment</button>&nbsp;
-                                <button type="button" class="btn btn-danger">Volunteer</button>&nbsp;
-                                <button type="button" class="btn btn-warning">others &nbsp;</button>&nbsp;
+                                <a href = "staff_mandatory.php" class="btn btn-primary">Mandatory</a> &nbsp;
+                                <a href = "staff_entertainment.php"  class="btn btn-success">Entertainment</a>&nbsp;
+                                <a href = "staff_mandatory.php"  class="btn btn-danger">Volunteer</a>&nbsp;
+                                <a href = "staff_mandatory.php"  class="btn btn-warning">others &nbsp;</a>&nbsp;
                                 <div class="dropdown btn-group-lg" role="group">
                                     <button class="btn btn-info dropdown-toggle " type="button" data-toggle="dropdown">&nbsp;&nbsp;&nbsp;&nbsp;Faculty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <span class="caret"></span></button>
@@ -80,14 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-8"><br>
-                    <div class="button btn-group-lg" align="center">
-                        <button name="submit" value="submit" type="submit" class="btn btn-primary btn-lg active"> recent Events</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button name="submit" value="submit" type="submit" class="btn btn-default btn-lg active"> Past Events</button>
-                        <br>
-                        <br>
-                    </div>
-                </div>
+                
             </div>
         </div>
     
