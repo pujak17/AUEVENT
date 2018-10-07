@@ -95,9 +95,8 @@
 
 </style>
 </head>
+<<<<<<< HEAD
 <body>
-
-
   <div class="container">
     <form enctype="multipart/form-data" action="staff_myevents.php" method="POST">
       <div class="row">
