@@ -46,35 +46,8 @@
                                 <a href =  "mandatory.php" class="btn btn-primary">Mandatory</a> &nbsp;
                                 <button type="button" class="btn btn-success">Entertainment</button>&nbsp;
                                 <button type="button" class="btn btn-danger">Volunteer</button>&nbsp;
-                                <button type="button" class="btn btn-warning">others &nbsp;</button>&nbsp;
-                                <div class="dropdown btn-group-lg" role="group">
-                                    <button class="btn btn-info dropdown-toggle " type="button" data-toggle="dropdown">&nbsp;&nbsp;&nbsp;&nbsp;Faculty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-header">A</li>
-                                        <li><a href="#">Architecture</a></li>
-                                        <li><a href="#">Arts</a></li>
-                                        <li class="dropdown-header">B</li>
-                                        <li><a href="#">BBA</a></li>
-                                        <li><a href="#">Bio Technology</a></li>
-                                        <li class="dropdown-header">C</li>
-                                        <li><a href="#">Communication Arts</a></li>
-                                        <li class="dropdown-header">E</li>
-                                        <li><a href="#">Engineering</a></li>
-                                        <li><a href="#">English Studies</a></li>
-                                        <li class="dropdown-header">L</li>
-                                        <li><a href="#">Laws</a></li>
-                                        <li class="dropdown-header">M</li>
-                                        <li><a href="#">Music</a></li>
-                                        <li class="dropdown-header">M</li>
-                                        <li><a href="#">Nursing</a></li>
-                                        <li class="dropdown-header">S</li>
-                                        <li><a href="#">science and technology</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Dropdown header 2</li>
-                                        <li><a href="#">About Us</a></li>
-                                    </ul>
-                                </div>
+                                <button type="button" class="btn btn-warning">Others &nbsp;</button>&nbsp;
+                                <a href = "faculty.php"  class="btn btn-info">Faculty &nbsp;</a>&nbsp;
                             </div>
                         </div>
                     </div>

@@ -69,7 +69,7 @@ if ($uploadOk == 0) {
             <div class="button btn-group-lg" align="center"><br>
                 <button name="submit" value="submit" type="submit" class="btn btn-success"> Update</button> &nbsp;&nbsp;&nbsp;
                 <button name="submit" value="submit" type="submit" class="btn btn-danger"> Delete</button> &nbsp;&nbsp;&nbsp;
-                <a href = "details.php" class="btn btn-info"> Details</a>
+                <a href = "staff_details.php" class="btn btn-info"> Details</a>
             </div>
        </div>
    </div>
@@ -92,7 +92,7 @@ if ($uploadOk == 0) {
 <div class="button btn-group-lg" align="center"><br>
                 <button name="submit" value="submit" type="submit" class="btn btn-success"> Update</button> &nbsp;&nbsp;&nbsp;
                 <button name="submit" value="submit" type="submit" class="btn btn-danger"> Delete</button> &nbsp;&nbsp;&nbsp;
-                <a href = "details.php" class="btn btn-info"> Details</a>
+                <a href = "staff_details.php" class="btn btn-info"> Details</a>
 </div>
 </div>
 </div>

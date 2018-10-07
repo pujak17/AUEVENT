@@ -104,7 +104,7 @@
 
     } else {
         ?>
-        <a href="login1.php">
+        <a href="staff_login.php">
         <img src="https://registrar.au.edu/wp-content/uploads/2017/01/ABAC_logo_footer_white.png" alt="HOME" style="width:62px;height:62px;border:0;"></a><br>
         
         <br><h2><span class = "title"> LOG IN </span></h2><br>
@@ -116,7 +116,7 @@
         <p><span class = "account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button name = "submit" value ="submit" type = "submit" class="btn btn-primary"> Log In </button><br><br><br>
         </form>
-        <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="staffsregister.php" class="btn btn-outline-danger btn-sm"> + New Account</a></div>
+        <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="staff_register.php" class="btn btn-outline-danger btn-sm"> + New Account</a></div>
         <p><span class = "fail">&nbsp;&nbsp;&nbsp; New to the place? </span></p>
         
         <?php 

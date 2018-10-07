@@ -21,13 +21,13 @@
                 <div class="col-xs-6">
                     <ul class="nav nav-pills ">
                         <li class="pull-right">
-                            <a class="top-button" href="loginstaff.php">LOG OUT</a>
+                            <a class="top-button" href="staff_login.php">LOG OUT</a>
                         </li>
                         <li class="pull-right">
                             <a class="top-button" href="staff_myevents.php">MY EVENTS</a>
                         </li>
                         <li class="pull-right">
-                            <a class="top-button" href="create.php">CREATE</a>
+                            <a class="top-button" href="staff_create.php">CREATE</a>
                         </li>
                         <li class="pull-right top-button">
                             <a class="top-button" href="staff_home.php">HOME</a>
@@ -48,34 +48,7 @@
                                 <a href = "staff_entertainment.php"  class="btn btn-success">Entertainment</a>&nbsp;
                                 <a href = "staff_mandatory.php"  class="btn btn-danger">Volunteer</a>&nbsp;
                                 <a href = "staff_mandatory.php"  class="btn btn-warning">others &nbsp;</a>&nbsp;
-                                <div class="dropdown btn-group-lg" role="group">
-                                    <button class="btn btn-info dropdown-toggle " type="button" data-toggle="dropdown">&nbsp;&nbsp;&nbsp;&nbsp;Faculty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-header">A</li>
-                                        <li><a href="#">Architecture</a></li>
-                                        <li><a href="#">Arts</a></li>
-                                        <li class="dropdown-header">B</li>
-                                        <li><a href="#">BBA</a></li>
-                                        <li><a href="#">Bio Technology</a></li>
-                                        <li class="dropdown-header">C</li>
-                                        <li><a href="#">Communication Arts</a></li>
-                                        <li class="dropdown-header">E</li>
-                                        <li><a href="#">Engineering</a></li>
-                                        <li><a href="#">English Studies</a></li>
-                                        <li class="dropdown-header">L</li>
-                                        <li><a href="#">Laws</a></li>
-                                        <li class="dropdown-header">M</li>
-                                        <li><a href="#">Music</a></li>
-                                        <li class="dropdown-header">M</li>
-                                        <li><a href="#">Nursing</a></li>
-                                        <li class="dropdown-header">S</li>
-                                        <li><a href="#">science and technology</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Dropdown header 2</li>
-                                        <li><a href="#">About Us</a></li>
-                                    </ul>
-                                </div>
+                                <a href = "staff_faculty.php"  class="btn btn-info">Faculty &nbsp;</a>&nbsp;
                             </div>
                         </div>
                     </div>

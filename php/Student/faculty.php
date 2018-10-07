@@ -11,31 +11,26 @@
 	display: block;
 }
 
-.container {
-	margin-top: 20px;
-	overflow: hidden;
-	margin-left: 250px;
-}
 </style>
 
 <body>
+	<div class="main" style="margin-top: 150px">
+		<h2 style="margin-left: 180px">Filter DIV Elements</h2>
 
-	<h2 style="margin-left: 280px">Filter DIV Elements</h2>
-
-	<div id="myBtnContainer" style="margin-left: 240px;">
-		<button class="btn active" onclick="filterSelection('all')"> Show all</button>
-		<button class="btn" onclick="filterSelection('Architecture')"> Architecture</button>
-		<button class="btn" onclick="filterSelection('Arts')"> Arts</button>
-		<button class="btn" onclick="filterSelection('BBA')"> BBA</button>
-		<button class="btn" onclick="filterSelection('Bio Technology')"> Bio Technology</button>
-		<button class="btn" onclick="filterSelection('Communication')"> Communication Arts</button>
-		<button class="btn" onclick="filterSelection('Engineering')"> Engineering</button>
-		<button class="btn" onclick="filterSelection('English Studies')"> English Studies</button>
-		<button class="btn" onclick="filterSelection('Laws')"> Laws</button>
-		<button class="btn" onclick="filterSelection('Music')"> Music</button>
-		<button class="btn" onclick="filterSelection('Nursing')"> Nursing</button>
-		<button class="btn" onclick="filterSelection('Science and Tech')"> Science and Tech</button>
-	</div>
+		<div id="myBtnContainer" style="margin-left: 120px;">
+			<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+			<button class="btn" onclick="filterSelection('Architecture')"> Architecture</button>
+			<button class="btn" onclick="filterSelection('Arts')"> Arts</button>
+			<button class="btn" onclick="filterSelection('BBA')"> BBA</button>
+			<button class="btn" onclick="filterSelection('Bio Technology')"> Bio Technology</button>
+			<button class="btn" onclick="filterSelection('Communication')"> Communication Arts</button>
+			<button class="btn" onclick="filterSelection('Engineering')"> Engineering</button>
+			<button class="btn" onclick="filterSelection('English Studies')"> English Studies</button>
+			<button class="btn" onclick="filterSelection('Laws')"> Laws</button>
+			<button class="btn" onclick="filterSelection('Music')"> Music</button>
+			<button class="btn" onclick="filterSelection('Nursing')"> Nursing</button>
+			<button class="btn" onclick="filterSelection('Science and Tech')"> Science and Tech</button>
+		</div>
 		<div class ="box filterDiv Music">
 			<span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Guitar workshop</span><br>
 			<span class = "details">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Music</span><br>
@@ -75,6 +70,7 @@
 				<a href = "myevent.php" class="btn btn-danger"> Not Attending</a>
 			</div>
 		</div>
+	</div>
 
 	<script>
 		filterSelection("all")
@@ -110,15 +106,15 @@
 		}
 
 
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-	btns[i].addEventListener("click", function(){
-		var current = document.getElementsByClassName("active");
-		current[0].className = current[0].className.replace(" active", "");
-		this.className += " active";
-	});
-}
-</script>
+		var btnContainer = document.getElementById("myBtnContainer");
+		var btns = btnContainer.getElementsByClassName("btn");
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].addEventListener("click", function(){
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace(" active", "");
+				this.className += " active";
+			});
+		}
+	</script>
 
 </body>

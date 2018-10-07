@@ -57,14 +57,14 @@
         <div class="bg-image"></div>
         <div class="fluid-container text-center">
             <div class="heading">
-                <br><h1> <span > Welcome to AU Events </span> <a href="login.php"><br>
+                <br><h1> <span > Welcome to AU Events </span> <a href="staff_login.php"><br>
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/ABAC_Logo.png/220px-ABAC_Logo.png" alt="HOME" style="width:72px;height:72px;"></a>
                 </div>
                 <div class ="box">
                     <h1><span class = "title">  Register account</span></h1>
                     <h2><span class = "title">  Staff</span></h2>
                     <br>
-                    <form action = "loginstaff.php" method = "GET">
+                    <form action = "staff_login.php" method = "GET">
                         <h6><span class = "conform">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-outline-light btn-sm"> Log In </button></span></h6><br>
                     </form>
                     <form enctype="multipart/form-data" action="SignupProcess.php" method="POST">

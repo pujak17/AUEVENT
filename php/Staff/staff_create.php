@@ -65,7 +65,8 @@
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 25px;
-    margin-left: 270px;
+    margin-left: 150px;
+    margin-top: 150px;
   }
 
   .col-25 {
@@ -95,8 +96,9 @@
 
 </style>
 </head>
-<<<<<<< HEAD
+
 <body>
+<div class="main">
   <div class="container">
     <form enctype="multipart/form-data" action="staff_myevents.php" method="POST">
       <div class="row">
@@ -226,6 +228,7 @@
       </div>
     </form>
   </div>
+</div>
 
 </body>
 </html>
