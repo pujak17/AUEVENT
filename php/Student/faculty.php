@@ -15,7 +15,7 @@
 
 <body>
 	<div class="main" style="margin-top: 150px">
-		<h2 style="margin-left: 180px">Filter DIV Elements</h2>
+		<h2 style="margin-left: 180px">Choose faculty</h2>
 
 		<div id="myBtnContainer" style="margin-left: 120px;">
 			<button class="btn active" onclick="filterSelection('all')"> Show all</button>
