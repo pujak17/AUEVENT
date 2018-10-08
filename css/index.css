@@ -3,7 +3,8 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color: #ECEDF7
 }
 .column {
     float: left;
@@ -118,11 +119,16 @@ body {
     width: 265px;
     position: fixed;
     z-index: 1;
-    top: 110px;
+    top: 112px;
     left: 10;
     background-color: rgb(89, 93, 114);
     overflow-x: hidden;
     padding-top: 5px;
+}
+
+.sidenav a:hover:not(.active) {
+    background-color: #6A637A;
+    color: #f1f1f1;
 }
 .buttons {
    
@@ -137,9 +143,7 @@ body {
     display: block;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
+
 
 .main {
     margin-left: 100px; /* Same as the width of the sidenav */

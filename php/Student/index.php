@@ -8,7 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
+<style>
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color: rgb(222, 226, 239, 0.3);
+}
+</style>
 <body>
         <div class="header container-fluid" align="center">
             <div class="header">

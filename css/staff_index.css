@@ -2,10 +2,9 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     background-color: #ECEDF7
 }
-
 
 .title{color: #492FAB;}
 
@@ -24,10 +23,10 @@ body {
 .header {
     /*border: 2px solid black; */
     padding-left: 10px;
-    background-color: #910000;
+    background-color: #871b22;
     background-repeat: no-repeat;
     background-size: auto;
-    overflow: hidden;
+    overflow: auto;
     position: fixed;
     top: 0;
     left: 0;
@@ -75,8 +74,8 @@ body {
 .box{
     font-size: 150%;
     border-style: solid;
-    background-color:rgb(235, 237, 244, 0.3);
-    border-color:  rgb(235, 237, 244, 0.7);
+    background-color:rgb(247, 244, 244, 0.7);
+    border-color:  rgb(232, 220, 220, 0.6);
     width:70%;
     border-radius: 5%;
 
@@ -129,21 +128,31 @@ body {
     top: 112px;
     left: 10;
     background-color: #844345;
-    overflow-x: hidden;
-    padding-top: 10px;
+    overflow-x: auto;
+    padding-top: 20px;
+    
 }
  .sidenav a {
-     padding: 6px 8px 6px 16px;
+     padding:  16px;
      text-decoration: none;
      font-size: 15px;
      color: #ffffff;
      display: block;
  }
- 
- .sidenav a:hover {
+ .sidenav a.active {
+    background-color: #834346;
+    color: white;
+  }
+  
+ .sidenav a:hover:not(.active) {
+     background-color: #834346;
      color: #f1f1f1;
  }
- 
+ div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
  .main {
      margin-left: 100px; /* Same as the width of the sidenav */
      font-size: 20px; /* Increased text to enable scrolling */
@@ -151,9 +160,19 @@ body {
      
  }
  
+ @media screen and (max-width: 200px) {
+    .sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidenav a {float: left;}
+    div.content {margin-left: 0;}
+  }
  @media screen and (max-height: 450px) {
      .sidenav {padding-top: 15px;}
      .sidenav a {font-size: 18px;}
+     .sidenav a { float: none;}
  }
  
  
@@ -172,4 +191,11 @@ body {
      background: #ddd;
      color: black;
    }
-   
+   .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#851D25;
+    color: white;
+    text-align: center;

@@ -10,27 +10,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
-.menu {
-    border-style: solid;
-    position: absolute;
-    background-color: #E8DCDC;
-    border-color: #E8DCDC;
-    width: 230px;
-    border-radius: 1%;
-    padding-bottom: 110px;
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color: rgb(244, 235, 235, 0.3);
+}
 
-}
-.sidenav {
-    height: 100%;
-    width: 265px;
-    position: fixed;
-    z-index: 1;
-    top: 112px;
-    left: 10;
-    background-color: #844345;
-    overflow-x: hidden;
-    padding-top: 10px;
-}
 </style>
 <body>
     <div>
@@ -80,6 +64,5 @@
         </div>
     
     
-  
    </div>
 </body>
