@@ -85,7 +85,7 @@
 		<div class ="box filterDiv Communications">
 		<div class="row">
       	<div class="column">
-			<span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Computer workshop</span><br>
+			<span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">PR workshop</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Communication Arts</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">John Paul XXI</span><br>

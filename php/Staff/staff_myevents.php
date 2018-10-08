@@ -4,7 +4,7 @@
 <div class="main">
 <div class="buttons"><br>
                 <div class="button btn-group-lg" align="center">
-                        <a href="staff_index.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="staff_home.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
                         <br>
                         <br>
@@ -68,8 +68,8 @@ if ($uploadOk == 0) {
 </div>
 </div>         
             <div class="button btn-group-lg" align="center"><br>
-                <button name="submit" value="submit" type="submit" class="btn btn-success"> Update</button> &nbsp;&nbsp;&nbsp;
-                <button name="submit" value="submit" type="submit" class="btn btn-danger"> Delete</button> &nbsp;&nbsp;&nbsp;
+                <a href = "staff_update.php" name="submit" value="submit" type="submit" class="btn btn-success"> Update</a> &nbsp;&nbsp;&nbsp;
+                <a href = "staff_delete.php" name="submit" value="submit" type="submit" class="btn btn-danger"> Delete</a> &nbsp;&nbsp;&nbsp;
                 <a href = "staff_details.php" class="btn btn-info"> Details</a>
             </div>
        </div>
@@ -91,7 +91,7 @@ if ($uploadOk == 0) {
         </div>
 </div>
 <div class="button btn-group-lg" align="center"><br>
-                <button name="submit" value="submit" type="submit" class="btn btn-success"> Update</button> &nbsp;&nbsp;&nbsp;
+<a href = "staff_update.php" name="submit" value="submit" type="submit" class="btn btn-success"> Update</a> &nbsp;&nbsp;&nbsp;
                 <button name="submit" value="submit" type="submit" class="btn btn-danger"> Delete</button> &nbsp;&nbsp;&nbsp;
                 <a href = "staff_details.php" class="btn btn-info"> Details</a>
 </div>

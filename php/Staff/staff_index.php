@@ -9,7 +9,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<style>
+.menu {
+    border-style: solid;
+    position: absolute;
+    background-color: #F4EDED;
+    border-color: #F4EDED;
+    width: 230px;
+    border-radius: 1%;
+    padding-bottom: 110px;
 
+}
+</style>
 <body>
     <div>
         <div class="header container-fluid" align="center">

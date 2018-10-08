@@ -67,7 +67,7 @@
                     <form action = "staff_login.php" method = "GET">
                         <h6><span class = "conform">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-outline-light btn-sm"> Log In </button></span></h6><br>
                     </form>
-                    <form enctype="multipart/form-data" action="SignupProcess.php" method="POST">
+                    <form enctype="multipart/form-data" action="staff_login.php" method="POST">
 
                         <span class = "info"> AU ID : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text" name = "userId"> </span><br><br>
                         <span class = "info"> Full Name : <input type = "text" name = "fullName"> </span><br><br>
