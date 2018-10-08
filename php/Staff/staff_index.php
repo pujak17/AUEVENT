@@ -13,12 +13,23 @@
 .menu {
     border-style: solid;
     position: absolute;
-    background-color: #F4EDED;
-    border-color: #F4EDED;
+    background-color: #E8DCDC;
+    border-color: #E8DCDC;
     width: 230px;
     border-radius: 1%;
     padding-bottom: 110px;
 
+}
+.sidenav {
+    height: 100%;
+    width: 265px;
+    position: fixed;
+    z-index: 1;
+    top: 112px;
+    left: 10;
+    background-color: #844345;
+    overflow-x: hidden;
+    padding-top: 10px;
 }
 </style>
 <body>
