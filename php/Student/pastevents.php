@@ -14,6 +14,7 @@
 <div class="row">
       <div class="column">
          <span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Food fest</span><br>
+         <span class = "details">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Entertainment</span><br>
          <span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">7th jan 2018</span><br>
          <span class = "details">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">KIng court</span><br>
          <span class = "details">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for all students of ABAC</span><br>
@@ -31,6 +32,7 @@
  <div class="row">
       <div class="column">
      <span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Advising</span><br>
+     <span class = "details">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Mandatory</span><br>
      <span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">15th sept 2018</span><br>
      <span class = "details">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">Fifth floor</span><br>
      <span class = "details">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">Its for all students.</span><br>

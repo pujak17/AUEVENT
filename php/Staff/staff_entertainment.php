@@ -3,7 +3,7 @@
 <div class="main">
 <div class="buttons"><br>
                 <div class="button btn-group-lg" align="center">
-                        <a href="index.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="staff_home.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
                         <br>
                         <br>
@@ -14,6 +14,7 @@
         <div class="row">
                 <div class="column">
                     <span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Freshy Night</span><br>
+                    <span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Entertainment</span><br>
                     <span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
                     <span class = "detail">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">John Paul XXI</span><br>
                     <span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
@@ -31,6 +32,7 @@
         <div class="row">
                 <div class="column">
                     <span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">International Night</span><br>
+                    <span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Entertainment</span><br>
                     <span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">7th oct 2018</span><br>
                     <span class = "detail">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">Salathai</span><br>
                     <span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for all international students of ABAC</span><br>

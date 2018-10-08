@@ -40,7 +40,7 @@ body {
 
 }
 .resize {
-    width: 80px;
+    width: 200px;
     height: auto;
   }
 
@@ -90,11 +90,11 @@ body {
 .menu {
     border-style: solid;
     position: absolute;
-    background-color: #EBEDF4;
-    border-color: #EBEDF4;
+    background-color: #F4EDED;
+    border-color: #F4EDED;
     width: 230px;
     border-radius: 1%;
-    padding-bottom: 100px;
+    padding-bottom: 110px;
 
 }
 

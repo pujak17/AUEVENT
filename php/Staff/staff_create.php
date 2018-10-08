@@ -222,7 +222,7 @@
         </div>
       </div>
       <div class="row">
-        <a href = "index.php"  class="btn btn-lg btn-danger" disabled="disabled" style="margin-right: 30px; float: right; ">Cancel</a>
+        <a href = "staff_home.php"  class="btn btn-lg btn-danger" disabled="disabled" style="margin-right: 30px; float: right; ">Cancel</a>
         <button value = "Upload file " type = "submit" class="btn btn-lg btn-success" style="margin-right: 30px;float: right;"> Create New </button>
 
       </div>

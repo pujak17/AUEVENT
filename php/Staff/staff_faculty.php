@@ -14,6 +14,7 @@
 </style>
 
 <body>
+
 <div class="main" style="margin-top: 150px">
 	<h2 style="margin-left: 180px">Choose Faculty</h2>
 
@@ -31,7 +32,26 @@
 		<button class="btn" onclick="filterSelection('Nursing')"> Nursing</button>
 		<button class="btn" onclick="filterSelection('Science and Tech')"> Science and Tech</button>
 	</div>
+
+	<div class ="box filterDiv Architecture">
+		<div class="row">
+      	<div class="column">
+			<span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Architecture exhibition</span><br>
+			<span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Architeture</span><br>
+			<span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">10th oct 2018</span><br>
+			<span class = "detail">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">vms 1001</span><br>
+			<span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
+			to eat, enjoy the show and also dance</span><br>
+			<span class = "detail">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
+			</div>
+			<div class="column">
+				<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqhtIHF_L-6ksXxJE-mN2k1F-CuPANR2EpH9YBNFF8j0wUrise" alt = "waikru" style="width:100%">	
+			</div>
+		</div>
+		</div>
 		<div class ="box filterDiv Music">
+		<div class="row">
+      	<div class="column">
 			<span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Guitar workshop</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Music</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
@@ -39,9 +59,15 @@
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
 			to eat, enjoy the show and also dance</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
-
+			</div>
+			<div class="column">
+				<img src = "https://d3vd6twwo0fg2z.cloudfront.net/content/uploads/2018/03/2018-poster-final-flat-online.jpg" alt = "waikru" style="width:100%">	
+			</div>
+		</div>
 		</div>
 		<div class ="box filterDiv Science and Tech">
+		<div class="row">
+      	<div class="column">
 			<span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Computer workshop</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Science and Tech</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
@@ -49,9 +75,16 @@
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
 			to eat, enjoy the show and also dance</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
-
+			</div>
+			<div class="column">
+				<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCKZL36jTESf0fgOyq4WsNHv_0tdbSDuE8UHFq6vi3sZtokJ1G-Q" alt = "waikru" style="width:100%">
+			</div>
 		</div>
+		</div>
+		
 		<div class ="box filterDiv Communications">
+		<div class="row">
+      	<div class="column">
 			<span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Computer workshop</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Communication Arts</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
@@ -59,8 +92,12 @@
 			<span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
 			to eat, enjoy the show and also dance</span><br>
 			<span class = "detail">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
+			</div>
+			<div class="column">
+				<img src = "http://www.unpad.ac.id/wp-content/uploads/2017/05/humas-unpad_2017-05-16_workshop-PR.jpeg" alt = "waikru" style="width:100%">	
+			</div>
 		</div>
-</div>
+		</div>
 
 	<script>
 		filterSelection("all")

@@ -4,7 +4,7 @@
 <div class="main">
 <div class="buttons"><br>
                 <div class="button btn-group-lg" align="center">
-                        <a href="index.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="staff_index.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
                         <br>
                         <br>
@@ -15,11 +15,12 @@
         <div class ="box" align = "center">
         <div class="row">
         <div class="column">
-            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event name  : </span><span class = "text"></span><br>
-            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Date : </span><span class = "text"></span><br>
-            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Venue : </span><span class = "text"></span><br>
-            <span class = "detail"> &nbsp; &nbsp; &nbsp;Description : </span><span class = "text"></span><br>
-            <span class = "detail"> &nbsp; &nbsp; &nbsp;link: </span><span class = "text"><a href = "<?php echo $_GET["link"]; ?>"> </a></span><br><br>
+            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Name  : </span><span class = "text"><?php echo $_POST["eventName"]; ?></span><br>
+            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Type  : </span><span class = "text"><?php echo $_POST["eventName"]; ?></span><br>
+            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Date : </span><span class = "text"><?php echo $_POST["eventDate"]; ?></span><br>
+            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Venue : </span><span class = "text"><?php echo $_POST["eventVenue"]; ?></span><br>
+            <span class = "detail"> &nbsp; &nbsp; &nbsp;Description : </span><span class = "text"><?php echo $_POST["description"]; ?></span><br>
+            <span class = "detail"> &nbsp; &nbsp; &nbsp;link: </span><span class = "text"><a href = "<?php echo $_GET["link"]; ?>"> </a></span><br>
         </div>
         <div class="column">
             <?php

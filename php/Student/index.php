@@ -22,7 +22,7 @@
                             <a class="top-button" href="login.php">LOG OUT</a>
                         </li>
                         <li class="pull-right">
-                            <a class="top-button" href="myevent.php">MY EVENTS</a>
+                            <a class="top-button" href="myevents.php">MY EVENTS</a>
                         </li>
                         <li class="pull-right">
                             <a class="top-button" href="home.php">HOME</a>
@@ -44,7 +44,7 @@
                             <br>
                             <div class="btn-group-vertical btn-group-lg" role="group">
                                 <a href =  "mandatory.php" class="btn btn-primary">Mandatory</a> &nbsp;
-                                <button type="button" class="btn btn-success">Entertainment</button>&nbsp;
+                                <a href =  "entertainment.php" class="btn btn-success">Entertainment</a>&nbsp;
                                 <button type="button" class="btn btn-danger">Volunteer</button>&nbsp;
                                 <button type="button" class="btn btn-warning">Others &nbsp;</button>&nbsp;
                                 <a href = "faculty.php"  class="btn btn-info">Faculty &nbsp;</a>&nbsp;
