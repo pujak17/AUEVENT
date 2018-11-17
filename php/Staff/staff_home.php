@@ -1,7 +1,35 @@
-<?php include('staff_index.php') ?>
+<?php include('staff_index.php');?>
+<?php session_start();?>
+<?php
+    if(isset($_SESSION['valid'])) {
+        
+        include('include.php');
+        $ID = $_SESSION['valid'];
+        $sql = "SELECT * FROM ADMIN_PROFILE WHERE Admin_Id='$ID'"; 
+        $result = $conn->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        print_r($row);
+       
+        $name = $row['Admin_name'];
+    
+    ?> 
+    <style>
+.Name{color : #EC7063;
+    font-weight: bold;
+    font-size: 20px;}
+
+.Name1{color : #55447C;
+    font-weight: bold;
+    font-size: 22px;}
+    </style>
 <div class="main">
-<div class="buttons"><br>
+<div class="Name" align="left"><br>
+<h4><span class = "Name"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome back to AUEvents, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
+</div>
+<div class="buttons">
                 <div class="button btn-group-lg" align="center">
+                
                         <a href="staff_home.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
                         <br>
@@ -77,3 +105,6 @@
 </div>
 
 </div>
+<?php } else {
+    echo ('invalid ');
+}?>

@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <?php include('staff_index.php') ?>
 <!DOCTYPE>
 <html>
@@ -10,6 +10,30 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript">
+  
+
+    $(function () {
+      $("#checked").click(function () {
+        if ($(this).is(":checked")) {
+          $("#manda").show();
+
+        } else {
+          $("#manda").hide();
+
+        }
+      });
+    });
+    $(function () {
+      $("#entertain").click(function () {
+        if ($(this).is(":checked")) {
+          $("#enter").show();
+
+        } else {
+          $("#enter").hide();
+
+        }
+      });
+    });
     $(function () {
       $("#checkFaculty").click(function () {
         if ($(this).is(":checked")) {
@@ -21,6 +45,7 @@
         }
       });
     });
+
   </script>
   <style>
   * {
@@ -97,7 +122,11 @@
 
 </style>
 </head>
+<?php
 
+
+
+?>
 <body>
 <div class="main">
   <div class="container">
@@ -140,30 +169,48 @@
         </div>
         <div class="col-75">
           <label>
-            <input type="checkbox" checked="checked">Mandatory
+            <input type="checkbox" id="checked" name = "eventType" value = "Mandatory">Mandatory
+            <span class="checkmark"></span>
+          </label>
+          <div class="row" id="manda" style="display: none;">
+            <div class="col-25">
+              <label>Dress Code: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "DressCode">
+            </div>
+          </div>
+
+          <label>
+            <input type="checkbox" id="entertain" name = "eventType" value = "Entertainment">Entertainment
+            <span class="checkmark"></span>
+          </label>
+          <div class="row" id="enter" style="display: none;">
+            <div class="col-25">
+              <label>Entrance cost: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "Cost">
+            </div>
+          </div>
+
+          <label>
+            <input type="checkbox" id="vol" name = "eventType" value = "Volunteer">Volunteer
             <span class="checkmark"></span>
           </label>
           <label>
-            <input type="checkbox">Entertainment
+            <input type="checkbox" id="other"name = "eventType" value = "Others">Others
             <span class="checkmark"></span>
           </label>
           <label>
-            <input type="checkbox">Volunteer
-            <span class="checkmark"></span>
-          </label>
-          <label>
-            <input type="checkbox">Others
-            <span class="checkmark"></span>
-          </label>
-          <label>
-            <input type="checkbox" id="checkFaculty">Faculty
+            <input type="checkbox" id="checkFaculty" name = "eventType" value = "Faculty">Faculty
             <span class="checkmark"></span>
           </label>
         </div>
       </div>
       <div class="row" id="faculty" style="display: none;">
         <div class="col-25">
-          <label>Faculty:</label>
+          <label>Faculty: </label>
         </div>
         <div class="col-75">
           <select name="faculty">
@@ -198,6 +245,39 @@
           </select>
         </div>
       </div>
+      
+      <div class="row" id="manda" style="display: none;">
+            <div class="col-25">
+              <label>Dress Code: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "DressCode">
+            </div>
+          </div>
+          <div class="row" id="enter" style="display: none;">
+            <div class="col-25">
+              <label>Entrance cost: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "Cost">
+            </div>
+          </div>
+          <div class="row" id="vol" style="display: none;">
+            <div class="col-25">
+              <label>Required Number: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "Cost">
+            </div>
+            </div>
+            <div class="row" id="other" style="display: none;">
+            <div class="col-25">
+              <label>About: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "Cost">
+            </div>
+          </div>
       <div class="row">
         <div class="col-25">
           <label>Description:</label>

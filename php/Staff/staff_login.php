@@ -1,4 +1,5 @@
-<?php session_Start(); ?>
+<?php session_Start();
+ ?>
 <!DOCTYPE HTML>
     <html>
         <head>
@@ -55,50 +56,54 @@
     <h3><span class= "heading"> Login  </span></h3>
 
     <?php 
-
+    include('include.php');
     if(isset($_GET['submit'])) {
-        $ID = ($_GET['ID']);
-        $userName = ($_GET['userName']);
-        $userPassword = ($_GET['userPassword']);
+        $Admin_Id =  $_GET['Admin_Id'];
+        $Admin_password =  $_GET['Admin_password'];
 
         
-        if($ID == " " || $userPassword == " ") {
+        if($Admin_Id == " " || $Admin_password == " ") {
         ?>
             <h5><span class = "fail"> Either the username or password that you typed in is empty </span></h5><br/>
-            <form action ="signup.php" method = "GET">
+            <form action ="Staff_register.php" method = "GET">
                 <button value="Upload" type = "submit" class="btn btn-info"> Go back? </button>
             </form>
     <?php
         } else {
-             $sql = "SELECT * FROM profilePage WHERE ID = '$ID' AND userPassword = '$userPassword'";
-                $result = $conn->query($sql);
-                $row = mysqli_fetch_assoc($result);
-                //print_r($row);
+            $Admin_Id = $_GET['Admin_Id'];
+            $Admin_password =  $_GET['Admin_password'];
+
+            $sql = "SELECT * FROM ADMIN_PROFILE WHERE Admin_Id = '$Admin_Id' AND Admin_password = '$Admin_password'";
+            $result = $conn->query($sql)  or die (mysql_error ());
+            $row = mysqli_fetch_assoc($result);
+            
+            
                 if(is_array($row) && !empty($row)) {
-                    $validUser = $row['ID'];
+                    $validUser = $row['Admin_Id'];
                     $_SESSION['valid'] = $validUser;
-                    //$_SESSION['userName'] = $row['userName'];
-                    $_SESSION['userPassword'] = $row['userPassword'];
+                    $_SESSION['Admin_password'] = $row['Admin_password'];
+                    $_SESSION['Admin_name'] = $row['Admin_name'];
                 ?>
                 <span class = "success"> You have logged in succesfully!! <?php echo ($row['userName']) ?></span><br>
                 <?php
-
-            } else {
+                    
+                 } else {
                 
-                ?>
-                <h3><span class = "fail"> ERROR!</span><br></h3>
-                <span class = "info"> The user name or the password that you typed in is incorrect! Please try again!!</span><br><br>
-                <form action ="login1.php" method = "GET">
-                    <button value="Upload" type = "submit" class="btn btn-info"> Go back? </button>
-                  </form>
-                <?php
-
-
-            } if(isset($_SESSION['valid'])) {
-                header('Location: loginProcess.php');
+                    ?>
+                    <h3><span class = "fail"> ERROR!</span><br></h3>
+                
+                    <span class = "info"> The user name or the password that you typed in is incorrect! Please try again!!</span><br><br>
+                    <form action ="Staff_login.php" method = "GET">
+                        <button value="Upload" type = "submit" class="btn btn-info"> Go back? </button>
+                    </form>
+                    <?php
+}
+            if(is_array($row) && !empty($row)) {
+                if(isset($_SESSION['valid'])) {
+                 header('Location: staff_loginsession.php');
             
-            }
-
+             }
+         }
             
         }
 
@@ -110,9 +115,9 @@
         <br><h2><span class = "title"> LOG IN </span></h2><br>
         <img src ="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" height="70" width="70" alt = "account"><br><br>
 
-        <form action = "staff_home.php" method = "GET" name = "login">
-        <span class = "info">AU ID &nbsp;&nbsp;&nbsp; : <input type = "text" name = "ID"></span><br><br>
-        <span class = "info">Password : <input type = "text" name = "userPassword"></span><br><br>
+        <form action = "" method = "GET" name = "login">
+        <span class = "info">AU ID &nbsp;&nbsp;&nbsp; : <input type = "text" name = "Admin_Id"></span><br><br>
+        <span class = "info">Password : <input type = "text" name = "Admin_password"></span><br><br>
         <p><span class = "account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button name = "submit" value ="submit" type = "submit" class="btn btn-primary"> Log In </button><br><br><br>
         </form>

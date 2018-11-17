@@ -17,6 +17,10 @@ body {
     font-weight: bold;
     font-size: 20px;
 }
+.Name{color : #EC7063;
+    font-weight: bold;
+    font-size: 15px;}
+    
 .file{color : #EC7063;}
 .description{font-size: 18pt; height: 40px; width:280px;}
 .font-weight-bold{color : #48588c;}

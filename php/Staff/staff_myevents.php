@@ -16,7 +16,7 @@
         <div class="row">
         <div class="column">
             <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Name  : </span><span class = "text"><?php echo $_POST["eventName"]; ?></span><br>
-            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Type  : </span><span class = "text"><?php echo $_POST["eventName"]; ?></span><br>
+            <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Type  : </span><span class = "text"><?php echo $_POST["eventType"]; ?></span><br>
             <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Date : </span><span class = "text"><?php echo $_POST["eventDate"]; ?></span><br>
             <span class = "detail"> &nbsp; &nbsp; &nbsp;Event Venue : </span><span class = "text"><?php echo $_POST["eventVenue"]; ?></span><br>
             <span class = "detail"> &nbsp; &nbsp; &nbsp;Description : </span><span class = "text"><?php echo $_POST["description"]; ?></span><br>
