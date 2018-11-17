@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<?php include('include.php');?>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
@@ -42,6 +43,12 @@ body {
                 </div>
             </div>
         </div>
+        <?php
+    if(isset($_SESSION['valid'])) {
+    $name = $_SESSION['Admin_name']; 
+    echp ($name);
+    }
+?>
         <div>
             <div class="sidenav">
                 <div class="col-xs-4 text-center">
