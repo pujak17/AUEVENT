@@ -52,8 +52,8 @@
             z-index: 2;
             text-align: center;}
         </style>
-    </head>
-    <body>
+</head>
+<body>
         <div class="bg-image"></div>
         <div class="fluid-container text-center">
             <div class="heading">
@@ -67,12 +67,12 @@
                     <form action = "login.php" method = "GET">
                         <h6><span class = "conform">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-outline-light btn-sm"> Log In </button></span></h6><br>
                     </form>
-                    <form enctype="multipart/form-data" action="SignupProcess.php" method="POST">
+                    <form enctype="multipart/form-data" action="signupprocess.php" method="POST">
 
                         <span class = "info"> AU ID : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type = "text" name = "userId"> </span><br><br>
                         <span class = "info"> Full Name : <input type = "text" name = "fullName"> </span><br><br>
                         <span class = "info"> Password &nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "password"> </span><br><br>
-                        <span class = "option">Faculty:&nbsp;&nbsp;&nbsp;&nbsp;  <select><option value="Architectute">Architecture</option> 
+                        <span class = "option" >Faculty:&nbsp;&nbsp;&nbsp;&nbsp;  <select name="faculty"><option value="Architectute">Architecture</option> 
                             <option value="Arts">Arts</option> 
                             <option value="BBA">BBA</option> 
                             <option value="Biotechnology">Biotechnology</option> 
@@ -85,14 +85,27 @@
                             <option value="science and technology">science and technology</option> 
                         </select></span><br> <br>
                         <span class = "info"> Major&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "major"> </span><br><br>
-
-
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-success"> Signup </button><br>
                     </form>
 
                 </div>
             </div>
         </div>
-    </body>
-
-    </html>
+</body>
+</html>
+<?php
+    include('include.php');
+    $ID = $_POST["userId"];
+    $fullName = $_POST["fullName"];
+    $major = $_POST["major"];
+    $faculty=$_POST["faculty"];
+    $password = $_POST["password"];
+    $sql = "INSERT INTO STUDENT (Student_Id, Full_name, Faculty, Major, Password)
+    VALUES ('$ID', '$fullName', '$faculty','$major', '$password')";  
+if($conn->query($sql) === TRUE) {
+    echo "<br> new record has been created successfully<br><br>";
+    header('location:student_signup.php');
+    }else{
+        echo "Error: ". $sql . "<br" . $conn->error;
+    }
+?>

@@ -52,7 +52,7 @@
             z-index: 2;
             text-align: center;}
         </style>
-    </head>
+</head>
     <body>
         <div class="bg-image"></div>
         <div class="fluid-container text-center">
@@ -83,8 +83,7 @@
             </div>
         </div>
     </body>
-
-    </html>
+</html>
 <?php
     include('include.php');
     $ID = $_POST["userId"];
