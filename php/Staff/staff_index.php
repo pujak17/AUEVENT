@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php include('include.php');?>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    

@@ -25,7 +25,7 @@
 <div class="main">
 <div class="Name" align="left"><br>
 <h4><span class = "Name"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome back to AUEvents, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome back to AUEvents, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
 </div>
 <div class="buttons">
                 <div class="button btn-group-lg" align="center">

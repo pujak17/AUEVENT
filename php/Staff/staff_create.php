@@ -1,6 +1,22 @@
 
-		<?php include('staff_index.php') ?>
-		<!DOCTYPE>
+<?php include('staff_index.php') ?>
+<!DOCTYPE HTML>
+<?php session_start();?>
+<?php
+include('include.php');
+if(isset($_SESSION['valid'])) {
+    include('include.php');
+        $ID = $_SESSION['valid'];
+        $sql = "SELECT * FROM ADMIN_PROFILE WHERE Admin_Id='$ID'"; 
+        $result = $conn->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        print_r($row);
+       
+        $name = $row['Admin_name'];
+        
+
+?>
+
 		<html>
 		<head>
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -172,61 +188,73 @@
     		$sql = "INSERT INTO ADMIN_PROFILE (Admin_Id, Admin_name, Admin_email, admin_password)
     				VALUES ('$ID', '$fullName', '$email_Id','$password')";
 
+?>
+<body>
+<div class="main">
+  <div class="container">
+    <form enctype="multipart/form-data" action="staff_myevents.php" method="POST">
+      <div class="row">
+        <div class="col-25">
+          <label>Event Name:</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="eventName" class = "event_name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label>Event Date:</label>
+        </div>
+        <div class="col-75">
+          <input type="date" name="eventDate" class = "event_date">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label>Time:</label>
+        </div>
+        <div class="col-75">
+          <input type = "text" name = "eventTime" class = "event_time">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label>Venue:</label>
+        </div>
+        <div class="col-75">
+          <input type = "text" name = "eventVenue" class = "event_venue">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label>Event Type:</label>
+        </div>
+        <div class="col-75">
+          <label>
+            <input type="checkbox" id="checked" name = "eventType" value = "Mandatory" class = "event_type">Mandatory
+            <span class="checkmark"></span>
+          </label>
+          <div class="row" id="manda" style="display: none;">
+            <div class="col-25">
+              <label>Dress Code: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "DressCode" class = "DressCode">
+            </div>
+          </div>
 
-		?>
-		<body>
-		<div class="main">
-		  <div class="container">
-		    <form enctype="multipart/form-data" action="staff_myevents.php" method="POST">
-		      <div class="row">
-		        <div class="col-25">
-		          <label>Event Name:</label>
-		        </div>
-		        <div class="col-75">
-		          <input type="text" name="eventName">
-		        </div>
-		      </div>
-		      <div class="row">
-		        <div class="col-25">
-		          <label>Event Date:</label>
-		        </div>
-		        <div class="col-75">
-		          <input type="date" name="eventDate">
-		        </div>
-		      </div>
-		      <div class="row">
-		        <div class="col-25">
-		          <label>Time:</label>
-		        </div>
-		        <div class="col-75">
-		          <input type = "text" name = "eventTime">
-		        </div>
-		      </div>
-		      <div class="row">
-		        <div class="col-25">
-		          <label>Venue:</label>
-		        </div>
-		        <div class="col-75">
-		          <input type = "text" name = "eventVenue">
-		        </div>
-		      </div>
-		      <div class="row">
-		        <div class="col-25">
-		          <label>Event Type:</label>
-		        </div>
-		        <div class="col-75">
-		          <label>
-		            <input type="radio" id="checked" name = "eventType" value = "Mandatory">Mandatory
-		            <span class="checkmark"></span>
-		          </label>
-		          <div class="row" id="manda" style="display: none;">
-		            <div class="col-25">
-		              <label>Dress Code: &nbsp; &nbsp;</label>
-		            </div>
-		            <div class="col-75">
-		              <input type = "text" name = "DressCode">
-		            </div>
-		          </div>
+          <label>
+            <input type="checkbox" id="entertain" name = "eventType" value = "Entertainment">Entertainment
+            <span class="checkmark"></span>
+          </label>
+          <div class="row" id="enter" style="display: none;">
+            <div class="col-25">
+              <label>Entrance cost: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "Cost">
+            </div>
+          </div>
 
 		          <label>
 		            <input type="radio" id="entertain" name = "eventType" value = "Entertainment">Entertainment

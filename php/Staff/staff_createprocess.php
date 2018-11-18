@@ -113,23 +113,46 @@ if ($uploadOk == 0) {
         if ($conn->query($sql) === TRUE) {
                   
 
-                  if ($event_type == 'Mandatory') {
+                if ($event_type == 'Mandatory') {
                     
                     $sql = "INSERT INTO MANDATORY (Event_Id, Dress_code) 
                     VALUES (DEFAULT,'$dress_code')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            echo ('new recored created succesfully');
+                        } else {
+
+                            echo "Error: ". $sql . "<br" . $conn->error;
+                        }
+
+                 } else if ($event_type == 'Entertainment'){
+
+                    $sql = "INSERT INTO ENTERTAINMENT (Event_Id, Enterance_cost) 
+                    VALUES (DEFAULT,'$enterance_cost')";
+
                     if ($conn->query($sql) === TRUE) {
                         echo ('new recored created succesfully');
-                    }else {
+                    } else {
+
                         echo "Error: ". $sql . "<br" . $conn->error;
                     }
-                  }else {
-                    echo "Error: ". $sql . "<br" . $conn->error;
-                  }
+                 } else if ($event_type == 'Volunteer') {
+                    $sql = "INSERT INTO VOLUNTEER (Event_Id, ) 
+                    VALUES (DEFAULT,'$required_number')";
 
-                } else {
-                  echo "Error : " . $sql . "<br>" . $conn->error;
+                    if ($conn->query($sql) === TRUE) {
+                        echo ('new recored created succesfully');
+                    } else {
+
+                        echo "Error: ". $sql . "<br" . $conn->error;
+                    }
+                 } 
+
+        } else {
+            echo "Error : " . $sql . "<br>" . $conn->error;
                 
-                }
+        }
+
     } else {
         ?><span class = "detail"> Sorry there was an error in uploading your file </span> <?php
     }
