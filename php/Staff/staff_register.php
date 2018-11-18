@@ -64,7 +64,7 @@
                     <h1><span class = "title">  Register account</span></h1>
                     <h2><span class = "title">  Staff</span></h2>
                     <br>
-                    <form action = "Staff_register.php" method = "GET">
+                    <form action = "Staff_login.php" method = "GET">
                         <h6><span class = "conform">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-outline-light btn-sm"> Log In </button></span></h6><br>
                     </form>
                     <form enctype="multipart/form-data" action="Staff_signupprocess.php" method="POST">
@@ -85,23 +85,5 @@
     </body>
 
     </html>
-<?php
-    include('include.php');
-    $ID = $_POST["userId"];
-    $fullName = $_POST["fullName"];
-    $email_Id = $_POST["email_Id"];
-    $password = $_POST["password"];
-    $Admin_number = $_POST["Phone_Number"];
-    $sql = "INSERT INTO ADMIN_PROFILE (Admin_Id, Admin_name, Admin_email, Admin_password)
-    VALUES ('$ID', '$fullName', '$email_Id','$password')";
+
     
-    $sql = "INSERT INTO ADMIN_PHONE (Admin_Id, Admin_number)
-    VALUES ('$ID', '$Admin_number')"; 
-    
-if($conn->query($sql) === TRUE) {
-    echo "<br> new record has been created successfully<br><br>";
-    header('location:Staff_signup2.php');
-    }else{
-        echo "Error: ". $sql . "<br" . $conn->error;
-    }
-?>

@@ -1,6 +1,22 @@
 
 <?php include('staff_index.php') ?>
-<!DOCTYPE>
+<!DOCTYPE HTML>
+<?php session_start();?>
+<?php
+include('include.php');
+if(isset($_SESSION['valid'])) {
+    include('include.php');
+        $ID = $_SESSION['valid'];
+        $sql = "SELECT * FROM ADMIN_PROFILE WHERE Admin_Id='$ID'"; 
+        $result = $conn->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        print_r($row);
+       
+        $name = $row['Admin_name'];
+        
+
+?>
+
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -136,7 +152,7 @@
           <label>Event Name:</label>
         </div>
         <div class="col-75">
-          <input type="text" name="eventName">
+          <input type="text" name="eventName" class = "event_name">
         </div>
       </div>
       <div class="row">
@@ -144,7 +160,7 @@
           <label>Event Date:</label>
         </div>
         <div class="col-75">
-          <input type="date" name="eventDate">
+          <input type="date" name="eventDate" class = "event_date">
         </div>
       </div>
       <div class="row">
@@ -152,7 +168,7 @@
           <label>Time:</label>
         </div>
         <div class="col-75">
-          <input type = "text" name = "eventTime">
+          <input type = "text" name = "eventTime" class = "event_time">
         </div>
       </div>
       <div class="row">
@@ -160,7 +176,7 @@
           <label>Venue:</label>
         </div>
         <div class="col-75">
-          <input type = "text" name = "eventVenue">
+          <input type = "text" name = "eventVenue" class = "event_venue">
         </div>
       </div>
       <div class="row">
@@ -169,7 +185,7 @@
         </div>
         <div class="col-75">
           <label>
-            <input type="checkbox" id="checked" name = "eventType" value = "Mandatory">Mandatory
+            <input type="checkbox" id="checked" name = "eventType" value = "Mandatory" class = "event_type">Mandatory
             <span class="checkmark"></span>
           </label>
           <div class="row" id="manda" style="display: none;">
@@ -177,7 +193,7 @@
               <label>Dress Code: &nbsp; &nbsp;</label>
             </div>
             <div class="col-75">
-              <input type = "text" name = "DressCode">
+              <input type = "text" name = "DressCode" class = "DressCode">
             </div>
           </div>
 
@@ -185,12 +201,13 @@
             <input type="checkbox" id="entertain" name = "eventType" value = "Entertainment">Entertainment
             <span class="checkmark"></span>
           </label>
+
           <div class="row" id="enter" style="display: none;">
             <div class="col-25">
               <label>Entrance cost: &nbsp; &nbsp;</label>
             </div>
             <div class="col-75">
-              <input type = "text" name = "Cost">
+              <input type = "text" name = "Cost" class = "Cost">
             </div>
           </div>
 
@@ -198,6 +215,15 @@
             <input type="checkbox" id="vol" name = "eventType" value = "Volunteer">Volunteer
             <span class="checkmark"></span>
           </label>
+          <div class="row" id="vol" style="display: none;">
+            <div class="col-25">
+              <label>Required Number: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "required" class = "required">
+            </div>
+            </div>
+
           <label>
             <input type="checkbox" id="other"name = "eventType" value = "Others">Others
             <span class="checkmark"></span>
@@ -206,6 +232,14 @@
             <input type="checkbox" id="checkFaculty" name = "eventType" value = "Faculty">Faculty
             <span class="checkmark"></span>
           </label>
+          <div class="row" id="other" style="display: none;">
+            <div class="col-25">
+              <label>About: &nbsp; &nbsp;</label>
+            </div>
+            <div class="col-75">
+              <input type = "text" name = "Cost">
+            </div>
+          </div>
         </div>
       </div>
       <div class="row" id="faculty" style="display: none;">
@@ -251,7 +285,7 @@
               <label>Dress Code: &nbsp; &nbsp;</label>
             </div>
             <div class="col-75">
-              <input type = "text" name = "DressCode">
+              <input type = "text" name = "Dress_Code">
             </div>
           </div>
           <div class="row" id="enter" style="display: none;">
@@ -313,3 +347,5 @@
 
 </body>
 </html>
+<?php
+}?>
