@@ -41,7 +41,7 @@
 <div class="main">
 <div class="Name" align="center"><br><br><br>
 <h4><span class = "Name"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome to Entertainment, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome to Volunteering, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
 </div>
 <div class="buttons">
                 <div class="button btn-group-lg" align="center">
@@ -55,7 +55,7 @@
 </div>
 
 <?php 
-  $sqli0 = "SELECT * FROM ENTERTAINMENT"; 
+  $sqli0 = "SELECT * FROM VOLUNTEER"; 
   $resulti0 = $conn->query($sqli0);
   while ($rowi0 = mysqli_fetch_array($resulti0)) { 
   $event_Id = $rowi0['Event_Id'];
@@ -84,8 +84,8 @@ $IDi = $rowi['Event_Id'];?>
      </div>
      <div class="column">
      <td><img class = "resize" src="uploads/<?php echo $upload ?>"> <br>
-     <span class = "info"> Event Type: </span><span class = "font">Entertainment<br> 
-     <span class = "info"> Enterance cost: </span><span class = "text"><?php echo ($rowi0['Entrance_cost']);?> <?php
+     <span class = "info"> Event Type: </span><span class = "font">Volunteer<br> 
+     <span class = "info"> Required number: </span><span class = "text"><?php echo ($rowi0['Required_number']);?> <?php
                               
                               ?>
 </div>

@@ -41,7 +41,7 @@
 <div class="main">
 <div class="Name" align="center"><br><br><br>
 <h4><span class = "Name"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome to Entertainment, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome to other, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
 </div>
 <div class="buttons">
                 <div class="button btn-group-lg" align="center">
@@ -55,7 +55,7 @@
 </div>
 
 <?php 
-  $sqli0 = "SELECT * FROM ENTERTAINMENT"; 
+  $sqli0 = "SELECT * FROM OTHERS"; 
   $resulti0 = $conn->query($sqli0);
   while ($rowi0 = mysqli_fetch_array($resulti0)) { 
   $event_Id = $rowi0['Event_Id'];
@@ -77,15 +77,15 @@ $IDi = $rowi['Event_Id'];?>
          <span class = "detail"> Event Time: </span><span class = "text"><?php echo $rowi['Event_time']; ?> </span><br>
          <span class = "detail"> Event Date: </span><span class = "text"><?php echo $rowi['Event_date']; ?> </span><br>
          <span class = "detail"> Event Description: </span><span class = "text"><?php echo $rowi['Event_description']; ?> </span><br>
-         <span class = "detail"> Event link: </span><span class = "text"><?php echo $rowi['Event_link'];?> </span><br><?php
+         <span class = "detail"> Event link: </span> <span class = "text"><a href="<?php echo $rowi['Event_link'];?>"><?php echo $rowi['Event_link'];?></a></span> <?php
          $upload =   $rowi['Event_photo'];
          $Event_Id = $rowi['Event_Id'];
          ?>
      </div>
      <div class="column">
      <td><img class = "resize" src="uploads/<?php echo $upload ?>"> <br>
-     <span class = "info"> Event Type: </span><span class = "font">Entertainment<br> 
-     <span class = "info"> Enterance cost: </span><span class = "text"><?php echo ($rowi0['Entrance_cost']);?> <?php
+     <span class = "info"> Event Type: </span><span class = "font">OTHERS<br> 
+        <span class = "info"> About: </span><span class = "text"><?php echo ($rowi0['About']);?> <?php
                               
                               ?>
 </div>

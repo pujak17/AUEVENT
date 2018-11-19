@@ -1,8 +1,8 @@
 -- Create database `AU_Events`
 -- http://localhost:8888/phpmyadmin/
 -- 
-CREATE DATABASE `la`;
-use `la`;
+CREATE DATABASE `AU_Event`;
+use `AU_Event`;
 --
 -- Table structure for table `#1 student`
 --
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `STUDENT` (
   `Full_name` varchar(30) NOT NULL default '',
   `Faculty` varchar(30) NOT NULL default '',
   `Major` varchar(30) NOT NULL,
-  `Password` varchar(30) NOT NULL default '',
+  `Student_password` varchar(30) NOT NULL default '',
   PRIMARY KEY (`Student_Id`)
 )
   DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `STUDENT` (
 --
 -- Table structure for table `#2 Admin`
 --
-CREATE TABLE IF NOT EXISTS `ADMIN` (
+CREATE TABLE IF NOT EXISTS `ADMIN_PROFILE` (
   `Admin_Id` int(10) unsigned NOT NULL,
   `Admin_name` varchar(30) NOT NULL default '',
   `Admin_email` varchar(30) NOT NULL default '',
@@ -34,12 +34,12 @@ CREATE TABLE IF NOT EXISTS `ADMIN` (
 --
 CREATE TABLE IF NOT EXISTS `ADMIN_PHONE` (
 `Admin_Id` int(10) unsigned NOT NULL,
-`Number` int(20) NOT NULL,
-PRIMARY KEY (`Admin_Id`, `Number`)
+`Admin_number` int(100) NOT NULL,
+PRIMARY KEY (`Admin_Id`, `Admin_number`)
 )
 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 
-ALTER TABLE `ADMIN_PHONE` ADD  FOREIGN KEY (`Admin_Id`) REFERENCES `ADMIN`(`Admin_Id`) 
+ALTER TABLE `ADMIN_PHONE` ADD  FOREIGN KEY (`Admin_Id`) REFERENCES `ADMIN_PROFILE`(`Admin_Id`) 
 ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -47,20 +47,20 @@ ON DELETE CASCADE ON UPDATE CASCADE;
 --
 Create TABLE IF NOT EXISTS `EVENT` (
 `Event_Id` int(7) unsigned NOT NULL  auto_increment,
-`Admin_Id` int(7) unsigned NOT NULL,
-`Event_name` int(7) NOT NULL,
-`Event_venue` int(30) NOT NULL,
+`Admin_Id` int(10) unsigned NOT NULL,
+`Event_name` varchar(70) NOT NULL,
+`Event_venue` varchar(30) NOT NULL,
 `Event_date` datetime(6) NOT NULL,
 `Event_time` varchar(30) NOT NULL,
 `Event_description` text NOT NULL,
-`Event_link` varchar(50) NOT NULL,
-`Event_photo` varchar (50) NOT NULL,
-`Date_create` datetime(6) NOT NULL,
+`Event_link` varchar(200) NOT NULL,
+`Event_photo` varchar (200) NOT NULL,
+`Date_create` datetime DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`Event_Id`)
 )
 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 
-ALTER TABLE `EVENT` ADD  FOREIGN KEY (`Admin_Id`) REFERENCES `ADMIN`(`Admin_Id`) 
+ALTER TABLE `EVENT` ADD  FOREIGN KEY (`Admin_Id`) REFERENCES `ADMIN_PROFILE`(`Admin_Id`) 
 ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

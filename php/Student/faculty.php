@@ -1,194 +1,176 @@
-<?php include ('index.php') ?>
+<?php include('index.php');?>
+<?php session_start();?>
+<?php
+    if(isset($_SESSION['valid'])) {
+        
+        include('include.php');
+        $ID = $_SESSION['valid'];
+        $sql = "SELECT * FROM STUDENT WHERE Student_Id='$ID'"; 
+        $result = $conn->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        print_r($row);
+        
+        $name = $row['Full_name'];
 
-<style>
-.filterDiv {
-	text-align: center;
-	margin-left: 280px;
-	display: none;
+?>        
+  
+  <style>
+.font{
+    color: #910000;
+    font-size: 20px;
+
 }
+.resize {
+    width: 200px;
+    height: auto;
+  }
+.Name{color : #EC7063;
+    font-weight: bold;
+    font-size: 20px;}
 
-.show {
-	display: block;
+.Name1{color : #55447C;
+    font-weight: bold;
+    font-size: 22px;}
+.buttons { 
+    margin-left: 200px;
+    margin-top: 30px;
+    padding-top: 20px;
 }
+.font1{
+    color: #CD5C5C;
+    font-size: 15px;
 
+}
+.detail3{
+    color: #CD5C5C;
+    font-size: 20px;
+
+}
+.detail {
+    color: #37406B;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.box {
+    font-size: 150%;
+    border-style: solid;
+    background-color:rgb(235, 237, 244, 0.3);
+    border-color:  rgb(235, 237, 244, 0.7);
+    width: 70%;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    margin-left:230px;
+}
+.topic{
+    color: #CB4335;
+    font-size: 25px;
+}
 </style>
 
-<body>
-	<div class="main" style="margin-top: 150px">
-		<h2 style="margin-left: 180px">Choose faculty</h2>
+</style>
+<div class="main">
+<div class="Name" align="center"><br><br><br>
+<h4><span class = "Name"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome to Faculty, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
+</div>
+<div class="buttons">
+                <div class="button btn-group-lg" align="center">
+                
+                        <a href="home.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
+                        <br>
+                        <br>
+   
+                </div>           
+</div>
 
-		<div id="myBtnContainer" style="margin-left: 120px;">
-			<button class="btn active" onclick="filterSelection('all')"> Show all</button>
-			<button class="btn" onclick="filterSelection('Architecture')"> Architecture</button>
-			<button class="btn" onclick="filterSelection('Arts')"> Arts</button>
-			<button class="btn" onclick="filterSelection('BBA')"> BBA</button>
-			<button class="btn" onclick="filterSelection('Bio Technology')"> Bio Technology</button>
-			<button class="btn" onclick="filterSelection('Communication')"> Communication Arts</button>
-			<button class="btn" onclick="filterSelection('Engineering')"> Engineering</button>
-			<button class="btn" onclick="filterSelection('English Studies')"> English Studies</button>
-			<button class="btn" onclick="filterSelection('Laws')"> Laws</button>
-			<button class="btn" onclick="filterSelection('Music')"> Music</button>
-			<button class="btn" onclick="filterSelection('Nursing')"> Nursing</button>
-			<button class="btn" onclick="filterSelection('Science and Tech')"> Science and Tech</button>
-		</div>
-		<div class ="box filterDiv Architecture">
-		<div class="row">
-      	<div class="column">
-			<span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Architecture exhibition</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Architeture</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">10th oct 2018</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">vms 1001</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
-			to eat, enjoy the show and also dance</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
-			</div>
-			<div class="column">
-				<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqhtIHF_L-6ksXxJE-mN2k1F-CuPANR2EpH9YBNFF8j0wUrise" alt = "waikru" style="width:100%">	
-			</div>
-		</div>
-		<div class="button btn-group-lg" align="center"><br>
-                <button type="button" value="Button Text" onclick = "myFunction()" id = "demo" class="btn btn-success"> Attend</button> &nbsp;&nbsp;&nbsp; 
-                <a href = "myevent.php" class="btn btn-danger"> Not Attend</a>
-            </div>
-       
-        </div>
-        <script>
-            function myFunction() {
-                document.getElementById("demo").childNodes[0].nodeValue=
-                "Attending";
-                document.getElementById("demo").style.color = "red";
-            }
-        </script>
+<html>
+<body><!--
+<input type='button' id="button1" value='first button' onclick="clickMe(this)"/>
+<input type='button' id="button2" value='second button' onclick="clickMe(this)"/>
+<input type='button' id="button3" value='third button' onclick="clickMe(this)"/>
+<input type='button' id="button4" value='fourth button' onclick="clickMe(this)"/>
+ 
+<script>
+function clickMe(e){
+    var value = +document.getElementById(e.id).value;
+    document.cookie = "value = " + value
+ 
+}
+</script>
+<h1> 
+-->
+</body>
+</html>
 
-		<div class ="box filterDiv Music">
-		<div class="row">
-      	<div class="column">
-			<span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Guitar workshop</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Music</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">John Paul XXI</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
-			to eat, enjoy the show and also dance</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
-			</div>
-			<div class="column">
-				<img src = "https://d3vd6twwo0fg2z.cloudfront.net/content/uploads/2018/03/2018-poster-final-flat-online.jpg" alt = "waikru" style="width:100%">	
-			</div>
-		</div>
-		<div class="button btn-group-lg" align="center"><br>
-		<button type="button" value="Button Text" onclick = "myFunction1()" id = "demo1" class="btn btn-success"> Attend</button> &nbsp;&nbsp;&nbsp; 
-		<a href = "myevent.php" class="btn btn-danger"> Not Attend</a>
-	</div>
+
+<?php
+  //$value = $_COOKIE['value'];
+  $sqli0 = "SELECT * FROM FACULTY ORDER BY Faculty_type"; 
+  $resulti0 = $conn->query($sqli0);
+  while ($rowi0 = mysqli_fetch_array($resulti0)) { 
+  $event_Id = $rowi0['Event_Id'];
+  ?>
+  
+<br>
+
+  <?php
+
+$sqli = "SELECT * FROM EVENT WHERE Event_Id = $event_Id"; 
+$resulti = $conn->query($sqli);
+$rowi = mysqli_fetch_assoc($resulti);
+$IDi = $rowi['Event_Id'];?>
+<div style="text-align: left;">
+    <span class = "topic">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $rowi0['Faculty_type'] ?></span>
+
+
+<div class ="box text-center">
+<span class = "font1"> <?php echo $rowi['Date_create']; ?></span>
+<div class="row">
+      <div class="column">
+         <span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text"><?php echo $rowi['Event_name']; ?></span><br>
+         <span class = "detail"> Event Venue: </span><span class = "text"><?php echo $rowi['Event_venue']; ?> </span><br>
+         <span class = "detail"> Event Time: </span><span class = "text"><?php echo $rowi['Event_time']; ?> </span><br>
+         <span class = "detail"> Event Date: </span><span class = "text"><?php echo $rowi['Event_date']; ?> </span><br>
+         <span class = "detail"> Event Description: </span><span class = "text"><?php echo $rowi['Event_description']; ?> </span><br>
+		 <span class = "detail"> Event link: </span> <span class = "text"><a href="<?php echo $rowi['Event_link'];?>"><?php echo $rowi['Event_link'];?></a></span> <?php
+		 
+         $upload =   $rowi['Event_photo'];
+         $Event_Id = $rowi['Event_Id'];
+         ?>
+     </div>
+     <div class="column">
+     <td><img class = "resize" src="../staff/uploads/<?php echo $upload ?>"> <br>
+     <span class = "info"> Event Type: </span><span class = "font">Faculty<br> 
+        <span class = "info"> Faculty_type: </span><span class = "text"><?php echo ($rowi0['Faculty_type']);?> <?php
+                              
+                           ?>
 
 </div>
-<script>
-	function myFunction1() {
-		document.getElementById("demo1").childNodes[0].nodeValue=
-		"Attending";
-		document.getElementById("demo1").style.color = "red";
-	}
-</script>
-		<div class ="box filterDiv Science and Tech">
-		<div class="row">
-      	<div class="column">
-			<span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Computer workshop</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Science and Tech</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">John Paul XXI</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
-			to eat, enjoy the show and also dance</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
-			</div>
-			<div class="column">
-				<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCKZL36jTESf0fgOyq4WsNHv_0tdbSDuE8UHFq6vi3sZtokJ1G-Q" alt = "waikru" style="width:100%">
-			</div>
-		</div>
-		<div class="button btn-group-lg" align="center"><br>
-                <button type="button" value="Button Text" onclick = "myFunction2()" id = "demo2" class="btn btn-success"> Attend</button> &nbsp;&nbsp;&nbsp; 
-                <a href = "myevent.php" class="btn btn-danger"> Not Attend</a>
-            </div>
-       
-        </div>
-        <script>
-            function myFunction2() {
-                document.getElementById("demo2").childNodes[0].nodeValue=
-                "Attending";
-                document.getElementById("demo2").style.color = "red";
-            }
-        </script>
-		<div class ="box filterDiv Communications">
-		<div class="row">
-      	<div class="column">
-			<span class = "details"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Computer workshop</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Faculty-Communication Arts</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">John Paul XXI</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
-			to eat, enjoy the show and also dance</span><br>
-			<span class = "details">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
-			</div>
-			<div class="column">
-				<img src = "http://www.unpad.ac.id/wp-content/uploads/2017/05/humas-unpad_2017-05-16_workshop-PR.jpeg" alt = "waikru" style="width:100%">	
-			</div>
-		</div>
-		<div class="button btn-group-lg" align="center"><br>
-                <button type="button" value="Button Text" onclick = "myFunction3()" id = "demo3" class="btn btn-success"> Attend</button> &nbsp;&nbsp;&nbsp; 
-                <a href = "myevent.php" class="btn btn-danger"> Not Attend</a>
-            </div>
-       
-        </div>
-        <script>
-            function myFunction3() {
-                document.getElementById("demo3").childNodes[0].nodeValue=
-                "Attending";
-                document.getElementById("demo3").style.color = "red";
-            }
-        </script>
+</div><br>
+<?php $sqli5 = "SELECT * FROM ATTENDS WHERE Event_Id='$Event_Id'"; 
+                                $resulti5 = $conn->query($sqli5);
+                                $rowi5 = mysqli_fetch_assoc($resulti5);
+                                $StudentId = $rowi5['Student_Id'];
+                                $EventId = $rowi5['Event_Id']; 
 
+                                if($ID = $StudentId && $Event_Id = $EventId) {
+                                ?><br><br>
 
-	<script>
-		filterSelection("all")
-		function filterSelection(c) {
-			var x, i;
-			x = document.getElementsByClassName("filterDiv");
-			if (c == "all") c = "";
-			for (i = 0; i < x.length; i++) {
-				w3RemoveClass(x[i], "show");
-				if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-			}
-		}
-
-		function w3AddClass(element, name) {
-			var i, arr1, arr2;
-			arr1 = element.className.split(" ");
-			arr2 = name.split(" ");
-			for (i = 0; i < arr2.length; i++) {
-				if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-			}
-		}
-
-		function w3RemoveClass(element, name) {
-			var i, arr1, arr2;
-			arr1 = element.className.split(" ");
-			arr2 = name.split(" ");
-			for (i = 0; i < arr2.length; i++) {
-				while (arr1.indexOf(arr2[i]) > -1) {
-					arr1.splice(arr1.indexOf(arr2[i]), 1);     
-				}
-			}
-			element.className = arr1.join(" ");
-		}
-
-
-		var btnContainer = document.getElementById("myBtnContainer");
-		var btns = btnContainer.getElementsByClassName("btn");
-		for (var i = 0; i < btns.length; i++) {
-			btns[i].addEventListener("click", function(){
-				var current = document.getElementsByClassName("active");
-				current[0].className = current[0].className.replace(" active", "");
-				this.className += " active";
-			});
-		}
-	</script>
-
-</body>
+                                
+                                <a href="#" class="btn btn-info btn-lg disabled" role="button" aria-disabled="true">Attending</a>
+                                <?php } else { ?>
+                                <a href="Insert.php?myevent=<?php echo $rowi['Event_Id']; ?>" type="button" class = "btn btn-lg btn-success">Attend</a>  
+                                <?php }?>
+</div>
+<br>
+<?php }
+    echo ('invalid ');
+}?>

@@ -59,9 +59,9 @@ body {
                             <div class="btn-group-vertical btn-group-lg" role="group">
                                 <a href = "staff_mandatory.php" class="btn btn-primary">Mandatory</a> &nbsp;
                                 <a href = "staff_entertainment.php"  class="btn btn-success">Entertainment</a>&nbsp;
-                                <a href = "staff_mandatory.php"  class="btn btn-danger">Volunteer</a>&nbsp;
-                                <a href = "staff_mandatory.php"  class="btn btn-warning">others &nbsp;</a>&nbsp;
-                                <a href = "staff_faculty.php"  class="btn btn-info">Faculty &nbsp;</a>&nbsp;
+                                <a href = "staff_volunteer.php"  class="btn btn-danger">Volunteer</a>&nbsp;
+                                <a href = "staff_others.php"  class="btn btn-warning">others &nbsp;</a>&nbsp;
+                                <a href = "staff_faculty2.php"  class="btn btn-info">Faculty &nbsp;</a>&nbsp;
                             </div>
                         </div>
                     </div>

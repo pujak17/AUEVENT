@@ -1,5 +1,18 @@
 <?php include('staff_index.php');?>
 <?php session_start();?>
+<style>
+.font1{
+    color: #CD5C5C;
+    font-size: 15px;
+
+}
+.info3{
+    color: #CD5C5C;
+    font-size: 20px;
+
+}
+
+</style>
 <?php
   include('include.php');
 ?>
@@ -7,23 +20,28 @@
 <?php
     if(isset($_SESSION['valid'])) {
         $ID = $_SESSION['valid'];
-        $sql = "SELECT * FROM EVENT WHERE Admin_Id='$ID'"; 
+        $sql = "SELECT * FROM EVENT WHERE Admin_Id = '$ID' ORDER BY Date_create DESC"; 
         $result = $conn->query($sql);
-        $row = mysqli_fetch_assoc($result);
-        $ID = $row['Admin_Id'];
+       
+       
+        
 ?>      
          <br>
         <br>
         <br><br>
-        <div class = "align-center">
-        <span class = "font">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class = "align-center"><br><br><br>
+        <span class = "info3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Admin Id: </span>
-        <span class = "info"><?php echo $row['Admin_Id']; ?> <br></span>
+        <span class = "info"><?php echo $ID ?> <br></span>
         </div>
         <?php
-        while ($row = mysqli_fetch_array($result)) {
+        
+      
+       while ($row = mysqli_fetch_array($result)){ 
         ?>
+        
         <div class ="box text-center">
+        <span class = "font1"> <?php echo $row['Date_create']; ?></span>
             <div class="row">
                     <div class="column">
                         <br>
@@ -32,7 +50,7 @@
                         <span class = "detail"> Event Time: </span><span class = "text"><?php echo $row['Event_time']; ?> </span><br>
                         <span class = "detail"> Event Date: </span><span class = "text"><?php echo $row['Event_date']; ?> </span><br>
                         <span class = "detail"> Event Description: </span><span class = "text"><?php echo $row['Event_description']; ?> </span><br>
-                        <span class = "detail"> Event link: </span><span class = "text"><?php echo $row['Event_link'];?> </span><br>3 <?php
+                        <span class = "detail"> Event link: </span> <span class = "text"><a href="<?php echo $rowi['Event_link'];?>"><?php echo $rowi['Event_link'];?></a></span> <?php
                         $Event_Id = $row['Event_Id'];
 
                         $upload =   $row['Event_photo'];

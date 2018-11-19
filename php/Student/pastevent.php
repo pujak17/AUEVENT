@@ -1,20 +1,32 @@
-<?php include('staff_index.php');?>
+<?php include('index.php') ?>
+
+
+
 <?php session_start();?>
 <?php
     if(isset($_SESSION['valid'])) {
         
         include('include.php');
         $ID = $_SESSION['valid'];
-        $sql = "SELECT * FROM ADMIN_PROFILE WHERE Admin_Id='$ID'"; 
+        $sql = "SELECT * FROM STUDENT WHERE Student_Id='$ID'"; 
         $result = $conn->query($sql);
         $row = mysqli_fetch_assoc($result);
         print_r($row);
         
-        $name = $row['Admin_name'];
+        $name = $row['Full_name'];
 
 ?>      
   
 <style>
+.font{
+    color: #910000;
+    font-size: 20px;
+
+}
+.resize {
+    width: 200px;
+    height: auto;
+  }
 .Name{color : #EC7063;
     font-weight: bold;
     font-size: 20px;}
@@ -32,33 +44,58 @@
     font-size: 15px;
 
 }
-.info3{
+.detail3{
     color: #CD5C5C;
     font-size: 20px;
 
 }
+.detail {
+    color: #37406B;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.box {
+    font-size: 150%;
+    border-style: solid;
+    background-color:rgb(235, 237, 244, 0.3);
+    border-color:  rgb(235, 237, 244, 0.7);
+    width: 70%;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    margin-left:230px;
+}
 </style>
+
 <div class="main">
+
 <div class="Name" align="center"><br><br><br>
 <h4><span class = "Name"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome back to AUEvents, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Past Events, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
 </div>
+
 <div class="buttons">
+
                 <div class="button btn-group-lg" align="center">
                 
-                        <a href="staff_home.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
+                        <a href="home.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
                         <br>
                         <br>
    
                 </div>           
 </div>
+
 <?php 
-$sqli = "SELECT * FROM EVENT ORDER BY Date_create DESC LIMIT 10"; 
+$sqli = "SELECT * FROM EVENT ORDER BY Date_create ASC LIMIT 10"; 
 $resulti = $conn->query($sqli);
 $IDi = $rowi['Event_Id'];
 while ($rowi = mysqli_fetch_array($resulti)) { ?>
 <div class ="box text-center">
+
 <span class = "font1"> <?php echo $rowi['Date_create']; ?></span>
 <div class="row">
       <div class="column">
@@ -72,6 +109,7 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
          $Event_Id = $rowi['Event_Id'];
          ?>
      </div>
+
      <div class="column">
      <td><img class = "resize" src="../staff/uploads/<?php echo $upload ?>"> 
      <?php      
@@ -81,8 +119,8 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
                                 if($rowi0 != ""){
                                 ?>
                                 <br><br><br>
-                                <span class = "info"> Event Type: </span><span class = "font">Mandatory<br> 
-                                <span class = "info"> Dress Code: </span><span class = "text"><?php echo ($rowi0['Dress_code']);?><br>
+                                <span class = "detail"> Event Type: </span><span class = "font">Mandatory<br> 
+                                <span class = "detail"> Dress Code: </span><span class = "text"><?php echo ($rowi0['Dress_code']);?><br>
                                 <?php
                                 }
                                 
@@ -92,8 +130,8 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
                                 if($rowi1 != ""){
                                 ?>
                                 <br><br><br>
-                                <span class = "info"> Event Type: </span><span class = "font">Volunteer<br>
-                                <span class = "info"> Required number: </span><span class = "text"><?php echo ($rowi1['Required_number']);?><br> 
+                                <span class = "detail"> Event Type: </span><span class = "font">Volunteer<br>
+                                <span class = "detail"> Required number: </span><span class = "text"><?php echo ($rowi1['Required_number']);?><br> 
                                 <?php
                                 }
 
@@ -103,8 +141,8 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
                                 if($rowi2 != ""){
                                 ?>
                                 <br><br><br>
-                                <span class = "info"> Event Type: </span><span class = "font">Others<br> 
-                                <span class = "info"> About: </span><span class = "text"><?php echo ($rowi2['About']);?><br> 
+                                <span class = "detail"> Event Type: </span><span class = "font">Others<br> 
+                                <span class = "detail"> About: </span><span class = "text"><?php echo ($rowi2['About']);?><br> 
                                 <?php
                                 }
 
@@ -114,8 +152,8 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
                                 if($rowi3 != ""){ 
                                 ?>
                                 <br><br><br>
-                                <span class = "info"> Event Type: </span><span class = "font">Faculty<br> 
-                                <span class = "info"> Faculty type: </span><span class = "text"><?php echo ($rowi3['Faculty_type']);?><br>  
+                                <span class = "detail"> Event Type: </span><span class = "font">Faculty<br> 
+                                <span class = "detail"> Faculty type: </span><span class = "text"><?php echo ($rowi3['Faculty_type']);?><br>  
                                 <?php
                                 }
                                 
@@ -125,14 +163,39 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
                                 if($rowi4 != ""){ 
                                 ?>
                                 <br><br><br>
-                                <span class = "info"> Event Type: </span><span class = "font">Entertainment<br> 
-                                <span class = "info"> Entrance cost: </span><span class = "text"><?php echo ($rowi4['Entrance_cost']);?><br> 
+                                <span class = "detail"> Event Type: </span><span class = "font">Entertainment<br> 
+                                <span class = "detail"> Entrance cost: </span><span class = "text"><?php echo ($rowi4['Entrance_cost']);?><br> 
                                 <?php 
                                 } 
                                 ?>    
-</div>
-</div>
+
+    </div>
+    
+    </div>                     
+            
+                                <?php $sqli5 = "SELECT * FROM ATTENDS WHERE Event_Id='$Event_Id'"; 
+                                $resulti5 = $conn->query($sqli5);
+                                $rowi5 = mysqli_fetch_assoc($resulti5);
+                                $StudentId = $rowi5['Student_Id'];
+                                $EventId = $rowi5['Event_Id']; 
+
+                                if($ID = $StudentId && $Event_Id = $EventId) {
+                                ?><br><br>
+
+                                
+                                <a href="#" class="btn btn-warning btn-lg disabled" role="button" aria-disabled="true">Attending</a>
+                                <?php } else { ?>
+                                <a href="Insert.php?myevent=<?php echo $rowi['Event_Id']; ?>" type="button" class = "btn btn-lg btn-success">Attend</a>  
+                                <?php }?>
+                               
+            
+                               
+    
 </div>
 <?php }
-    echo ('invalid ');
+    
 }?>
+
+
+      
+    

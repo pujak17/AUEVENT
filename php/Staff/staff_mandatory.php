@@ -1,47 +1,96 @@
-<?php include('staff_index.php') ?>
+<?php include('staff_index.php');?>
+<?php session_start();?>
+<?php
+    if(isset($_SESSION['valid'])) {
+        
+        include('include.php');
+        $ID = $_SESSION['valid'];
+        $sql = "SELECT * FROM ADMIN_PROFILE WHERE Admin_Id='$ID'"; 
+        $result = $conn->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        print_r($row);
+        
+        $name = $row['Admin_name'];
 
+?>      
+  
+<style>
+.Name{color : #EC7063;
+    font-weight: bold;
+    font-size: 20px;}
+
+.Name1{color : #55447C;
+    font-weight: bold;
+    font-size: 22px;}
+.buttons { 
+    margin-left: 200px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.font1{
+    color: #CD5C5C;
+    font-size: 15px;
+
+}
+.info3{
+    color: #CD5C5C;
+    font-size: 20px;
+
+}
+</style>
 <div class="main">
-<div class="buttons"><br>
+<div class="Name" align="center"><br><br><br>
+<h4><span class = "Name"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Welcome to Mandatory, </span><span class = "Name1"><?php echo ($name); ?> </span></h4>
+</div>
+<div class="buttons">
                 <div class="button btn-group-lg" align="center">
+                
                         <a href="staff_home.php" class="btn btn-primary btn-lg active"> Recent Events </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="staff_pastevent.php" class="btn btn-default btn-lg active"> Past Events</a>
                         <br>
                         <br>
    
                 </div>           
-        </div>
+</div>
+
+<?php 
+  $sqli0 = "SELECT * FROM MANDATORY"; 
+  $resulti0 = $conn->query($sqli0);
+  while ($rowi0 = mysqli_fetch_array($resulti0)) { 
+  $event_Id = $rowi0['Event_Id'];
+  ?>
+  
+  ?><br>
+  <?php
+
+$sqli = "SELECT * FROM EVENT WHERE Event_Id = $event_Id"; 
+$resulti = $conn->query($sqli);
+$rowi = mysqli_fetch_assoc($resulti);
+$IDi = $rowi['Event_Id'];?>
 <div class ="box text-center">
+<span class = "font1"> <?php echo $rowi['Date_create']; ?></span>
 <div class="row">
       <div class="column">
-         <span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Wai Kru Ceremony</span><br>
-         <span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Entertainment</span><br>
-         <span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">10th oct 2018</span><br>
-         <span class = "detail">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">John Paul XXI</span><br>
-         <span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 and teachers of ABAC</span><br>
-         <span class = "detail">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">click here for link</a></span><br><br>
+         <span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text"><?php echo $rowi['Event_name']; ?></span><br>
+         <span class = "detail"> Event Venue: </span><span class = "text"><?php echo $rowi['Event_venue']; ?> </span><br>
+         <span class = "detail"> Event Time: </span><span class = "text"><?php echo $rowi['Event_time']; ?> </span><br>
+         <span class = "detail"> Event Date: </span><span class = "text"><?php echo $rowi['Event_date']; ?> </span><br>
+         <span class = "detail"> Event Description: </span><span class = "text"><?php echo $rowi['Event_description']; ?> </span><br>
+         <span class = "detail"> Event link: </span> <span class = "text"><a href="<?php echo $rowi['Event_link'];?>"><?php echo $rowi['Event_link'];?></a></span> <?php
+         $upload =   $rowi['Event_photo'];
+         $Event_Id = $rowi['Event_Id'];
+         ?>
      </div>
      <div class="column">
-     <img src = "http://www.au2014.au.edu/index.php/au-gallery-2015/image?view=image&format=raw&type=img&id=13026" alt = "waikru" style="width:302px;height:152px;border:0;">
-     </div>
-     </div>
-     
- </div>    
-
- 
- <div class ="box text-center">
- <div class="row">
-      <div class="column">
-     <span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Ethics Seminar</span><br>
-     <span class = "detail">&nbsp;&nbsp;&nbsp;Event type : </span><span class = "text">Entertainment</span><br>
-     <span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">15th oct 2018</span><br>
-     <span class = "detail">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">CL14</span><br>
-     <span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">Students having BG1403X needs to attend this event</span><br>
-     <span class = "detail">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">click here for link</a></span><br><br>
-     </div>
-     <div class="column">
-     <img src = "https://www.glurr.com/images/topic/0774975001489767079.jpg" alt = "ethics" style="width:302px;height:152px;border:0;"><br>
-     </div>
-     </div>
-     
+     <td><img class = "resize" src="uploads/<?php echo $upload ?>"> <br>
+     <span class = "info"> Event Type: </span><span class = "font">Mandatory<br> 
+        <span class = "info"> Dress Code: </span><span class = "text"><?php echo ($rowi0['Dress_code']);?> <?php
+                              
+                              ?>
 </div>
 </div>
+</div>
+<?php }
+    echo ('invalid ');
+}?>

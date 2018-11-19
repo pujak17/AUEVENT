@@ -50,8 +50,8 @@ body {
                             <div class="btn-group-vertical btn-group-lg" role="group">
                                 <a href =  "mandatory.php" class="btn btn-primary">Mandatory</a> &nbsp;
                                 <a href =  "entertainment.php" class="btn btn-success">Entertainment</a>&nbsp;
-                                <button type="button" class="btn btn-danger">Volunteer</button>&nbsp;
-                                <button type="button" class="btn btn-warning">Others &nbsp;</button>&nbsp;
+                                <a href = "volunteer.php" class="btn btn-danger">Volunteer</a>&nbsp;
+                                <a href = "others.php" class="btn btn-warning">Others &nbsp;</a>&nbsp;
                                 <a href = "faculty.php"  class="btn btn-info">Faculty &nbsp;</a>&nbsp;
                             </div>
                         </div>

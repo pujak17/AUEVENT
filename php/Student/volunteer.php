@@ -88,7 +88,7 @@
 </div>
 
 <?php 
-  $sqli0 = "SELECT * FROM MANDATORY"; 
+  $sqli0 = "SELECT * FROM VOLUNTEER"; 
   $resulti0 = $conn->query($sqli0);
   while ($rowi0 = mysqli_fetch_array($resulti0)) { 
   $event_Id = $rowi0['Event_Id'];
@@ -117,8 +117,8 @@ $IDi = $rowi['Event_Id'];?>
      </div>
      <div class="column">
      <td><img class = "resize" src="../staff/uploads/<?php echo $upload ?>"> <br>
-     <span class = "info"> Event Type: </span><span class = "font">Mandatory<br> 
-        <span class = "info"> Dress Code: </span><span class = "text"><?php echo ($rowi0['Dress_code']);?> <?php
+     <span class = "info"> Event Type: </span><span class = "font">VOLUNTEER<br> 
+        <span class = "info"> Required number: </span><span class = "text"><?php echo ($rowi0['Required_number']);?> <?php
                               
                               ?>
 </div>
