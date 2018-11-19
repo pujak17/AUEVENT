@@ -14,7 +14,7 @@ if(isset($_SESSION['valid'])) {
        
         $name = $row['Admin_name'];
         
-
+}
 ?>
 
 		<html>
@@ -147,7 +147,7 @@ if(isset($_SESSION['valid'])) {
 		    background-color: #f2f2f2;
 		    padding: 25px;
 		    margin-left: 150px;
-		    margin-top: 150px;
+		    margin-top: 40px;
 		    width: 900px;
 		  }
 
@@ -178,21 +178,15 @@ if(isset($_SESSION['valid'])) {
 
 		</style>
 		</head>
-		<?php
-		    include('include.php');
-		    $ID = $_POST["userId"];
-    		$fullName = $_POST["fullName"];
-    		$email_Id = $_POST["email_Id"];
-    		$password = $_POST["password"];
-    		$Admin_number = $_POST["Phone_Number"];
-    		$sql = "INSERT INTO ADMIN_PROFILE (Admin_Id, Admin_name, Admin_email, admin_password)
-    				VALUES ('$ID', '$fullName', '$email_Id','$password')";
-
-?>
+		
 <body>
 <div class="main">
+<br><br>
+<h3><span class = "details" text-align = "right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a new Event</span></h3>
   <div class="container">
-    <form enctype="multipart/form-data" action="staff_myevents.php" method="POST">
+    <form enctype="multipart/form-data" action="staff_createprocess.php" method="POST">
       <div class="row">
         <div class="col-25">
           <label>Event Name:</label>
@@ -231,7 +225,7 @@ if(isset($_SESSION['valid'])) {
         </div>
         <div class="col-75">
           <label>
-            <input type="checkbox" id="checked" name = "eventType" value = "Mandatory" class = "event_type">Mandatory
+            <input type="radio" id="checked" name = "eventType" value = "Mandatory" class = "event_type">Mandatory
             <span class="checkmark"></span>
           </label>
           <div class="row" id="manda" style="display: none;">
@@ -240,19 +234,6 @@ if(isset($_SESSION['valid'])) {
             </div>
             <div class="col-75">
               <input type = "text" name = "DressCode" class = "DressCode">
-            </div>
-          </div>
-
-          <label>
-            <input type="checkbox" id="entertain" name = "eventType" value = "Entertainment">Entertainment
-            <span class="checkmark"></span>
-          </label>
-          <div class="row" id="enter" style="display: none;">
-            <div class="col-25">
-              <label>Entrance cost: &nbsp; &nbsp;</label>
-            </div>
-            <div class="col-75">
-              <input type = "text" name = "Cost">
             </div>
           </div>
 
@@ -265,7 +246,7 @@ if(isset($_SESSION['valid'])) {
 		              <label>Entrance cost: &nbsp; &nbsp;</label>
 		            </div>
 		            <div class="col-75">
-		              <input type = "text" name = "Cost">
+		              <input type = "text" name = "Cost" class = "Cost">
 		            </div>
 		          </div>
 
@@ -278,7 +259,7 @@ if(isset($_SESSION['valid'])) {
 		              <label>Number of Volunteers: &nbsp; &nbsp;</label>
 		            </div>
 		            <div class="col-75">
-		              <input type = "text" name = "Cost">
+		              <input type = "text" name = "required" class = "required">
 		            </div>
 		          </div>
 		          <label>
@@ -290,7 +271,7 @@ if(isset($_SESSION['valid'])) {
 		              <label>About: &nbsp; &nbsp;</label>
 		            </div>
 		            <div class="col-75">
-		              <input type = "text" name = "Cost">
+		              <input type = "text" name = "About" class = "About">
 		            </div>
 		          </div>
 		          <label>
@@ -337,38 +318,7 @@ if(isset($_SESSION['valid'])) {
 		        </div>
 		      </div>
 		      
-		      <div class="row" id="manda" style="display: none;">
-		            <div class="col-25">
-		              <label>Dress Code: &nbsp; &nbsp;</label>
-		            </div>
-		            <div class="col-75">
-		              <input type = "text" name = "DressCode">
-		            </div>
-		          </div>
-		          <div class="row" id="enter" style="display: none;">
-		            <div class="col-25">
-		              <label>Entrance cost: &nbsp; &nbsp;</label>
-		            </div>
-		            <div class="col-75">
-		              <input type = "text" name = "Cost">
-		            </div>
-		          </div>
-		          <div class="row" id="vol" style="display: none;">
-		            <div class="col-25">
-		              <label>Required Number: &nbsp; &nbsp;</label>
-		            </div>
-		            <div class="col-75">
-		              <input type = "text" name = "Cost">
-		            </div>
-		            </div>
-		            <div class="row" id="other" style="display: none;">
-		            <div class="col-25">
-		              <label>About: &nbsp; &nbsp;</label>
-		            </div>
-		            <div class="col-75">
-		              <input type = "text" name = "Cost">
-		            </div>
-		          </div>
+		    
 		      <div class="row">
 		        <div class="col-25">
 		          <label>Description:</label>
@@ -382,7 +332,7 @@ if(isset($_SESSION['valid'])) {
 		          <label>Link:</label>
 		        </div>
 		        <div class="col-75">
-		          <input type="url" name="link">
+		          <input type="url" name="link" class = "link">
 		        </div>
 		      </div>
 		      <div class="row">
@@ -404,3 +354,4 @@ if(isset($_SESSION['valid'])) {
 
 		</body>
 		</html>
+  

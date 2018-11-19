@@ -31,7 +31,7 @@ body {
                             <a class="top-button" href="staff_login.php">LOG OUT</a>
                         </li>
                         <li class="pull-right">
-                            <a class="top-button" href="staff_myevents.php">MY EVENTS</a>
+                            <a class="top-button" href="staff_myevent.php">MY EVENTS</a>
                         </li>
                         <li class="pull-right">
                             <a class="top-button" href="staff_create.php">CREATE</a>
