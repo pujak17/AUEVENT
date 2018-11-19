@@ -1,8 +1,19 @@
 <!DOCTYPE html>
+<?php include('staff_index.php');?>
+<style>
+.success{color : #27AE60;
+    font-weight: bold;
+    font-size: 20px;}
+.success1{
+    color : #2E86C1;
+    font-weight: bold;
+    font-size: 20px
+}
+
+</style>
 
 <?php session_start();?>
 <?php
-include('include.php');
 if(isset($_SESSION['valid'])) {
     include('include.php');
         $ID = $_SESSION['valid'];
@@ -12,7 +23,8 @@ if(isset($_SESSION['valid'])) {
        
        
         $ID = $row['Admin_Id'];
-        //echo ($ID);
+        
+       
         
 }
 $ID = $row['Admin_Id'];   
@@ -24,33 +36,18 @@ $event_type =  $_POST["eventType"];
 $event_description = $_POST["description"];
 $event_link = $_POST["link"];
 $dress_code = $_POST["DressCode"];
-$enterance_cost = $_POST["Cost"]; /*
-echo ($dress_code); 
+$enterance_cost = $_POST["Cost"];  
+/*
+echo ($event_type); 
 echo ($enterance_cost);
 echo($event_date );
 echo($event_description);
-exit;*/
+*/
 $enterance_cost = $_POST["Cost"]; 
 $required_number = $_POST["required"]; 
-$about = $_POST["eventType"];
+$about = $_POST["About"];
 $faculty_type = $_POST["faculty"];
-
-if ($event_type == 'Mandatory') {
-    $sql = "INSERT INTO MANDATORY (Event_Id, Dress_code) 
-    VALUES (DEFAULT,'$dress_code')";
-}else if ($event_type == 'Entertainment') {
-    $sql = "INSERT INTO Entertainment (Event_Id, Enterance_cost) 
-    VALUES (DEFAULT,'$enterance_cost')";
-}else if ($event_type == 'Volunteer') {
-    $sql = "INSERT INTO Entertainment (Event_Id, Enterance_cost) 
-    VALUES (DEFAULT,'$required_number')";
-}else if ($event_type == 'Volunteer') {
-    $sql = "INSERT INTO Entertainment (Event_Id, Enterance_cost) 
-    VALUES (DEFAULT,'$required_number')";
-}else if ($event_type == 'Volunteer') {
-    $sql = "INSERT INTO Entertainment (Event_Id, Enterance_cost) 
-    VALUES (DEFAULT,'$required_number')";
-}
+echo($ID);
 ?>
 
 
@@ -67,7 +64,7 @@ if ($event_type == 'Mandatory') {
 </div>
     
         <div class ="box" align = "center">
-        <div class="row">
+        <!--<div class="row">
        
         <div class="column">
             <?php
@@ -104,67 +101,90 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         #echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         ?>
-        <img class = "resize" src="uploads/<?php echo basename( $_FILES["fileToUpload"]["name"])?> ">
+         <!-- <img class = "resize" src="uploads/<?php //echo basename( $_FILES["fileToUpload"]["name"])?> "> -->
         <?php $file = basename($_FILES["fileToUpload"]["name"]); 
+          
          $sql = "INSERT INTO EVENT (Event_Id, Admin_Id, Event_name, Event_venue, Event_date, Event_time, Event_description, Event_link, Event_photo, Date_create)
          VALUES (DEFAULT,'$ID', '$event_name', '$event_venue', '$event_date', '$event_time','$event_description', '$event_link', '$file', DEFAULT)";?>
-
+       
         <?php
         if ($conn->query($sql) === TRUE) {
-                  
-
-                  if ($event_type == 'Mandatory') {
+            ?> <h3><span class = "success"> New Event has been created successfully  </span></h3>
+            <?php
+                if ($event_type == 'Mandatory') {
                     
                     $sql = "INSERT INTO MANDATORY (Event_Id, Dress_code) 
-                    VALUES (DEFAULT,'$dress_code')";
+                    VALUES (LAST_INSERT_ID(),'$dress_code')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            ?> <h3><span class = "success1"> New Event has been added into Mandatory </span></h3>
+                           <?php
+                        } else {
+
+                            echo "Error: ". $sql . "<br" . $conn->error;
+                        }
+                    
+                 } else if ($event_type == 'Entertainment'){
+                       
+                    $sql = "INSERT INTO ENTERTAINMENT (Event_Id, Entrance_cost) 
+                    VALUES (LAST_INSERT_ID(),'$enterance_cost')";
+
                     if ($conn->query($sql) === TRUE) {
-                        echo ('new recored created succesfully');
-                    }else {
+                        ?> <h3><span class = "success1"> New Event has been added into Entertainment  </span></h3>
+                        <?php
+                    } else {
+
                         echo "Error: ". $sql . "<br" . $conn->error;
                     }
-                  }else {
-                    echo "Error: ". $sql . "<br" . $conn->error;
-                  }
 
-                } else {
-                  echo "Error : " . $sql . "<br>" . $conn->error;
+                 } else if ($event_type == 'Volunteer') {
+                    $sql = "INSERT INTO VOLUNTEER (Event_Id, Required_number) 
+                    VALUES (LAST_INSERT_ID(),'$required_number')";
+
+                    if ($conn->query($sql) === TRUE) {
+                      ?> <h3><span class = "success1"> New Event has been added into Volunteer  </span></h3>
+                      <?php
+                    } else {
+
+                        echo "Error: ". $sql . "<br" . $conn->error;
+                    }
+                 
+                 } else if ($event_type == 'Others') {
+                    $sql = "INSERT INTO OTHERS (Event_Id, About) 
+                    VALUES (LAST_INSERT_ID(), '$about')";
+
+                    if ($conn->query($sql) === TRUE) {
+                        ?> <h3><span class = "success1"> New Event has been added into Other </span></h3>
+                        <?php
+                    } else {
+
+                        echo "Error: ". $sql . "<br" . $conn->error;
+                    }
+                 } else if ($event_type == 'Faculty') {
+                    $sql = "INSERT INTO FACULTY (Event_Id, Faculty_type) 
+                    VALUES (LAST_INSERT_ID(), '$faculty_type')";
+
+                    if ($conn->query($sql) === TRUE) {
+                        ?> <h3><span class = "success1"> New Event has been added into Faculty </span></h3>
+                       <?php
+                    } else {
+
+                        echo "Error: ". $sql . "<br" . $conn->error;
+                    }
+                 } ?>
+                 <br> <a href="staff_myevent.php" class="btn btn-success btn-lg active"> Go to My Events</a>
+                 <?php
+        } else {
+            echo ("The catagory does not have any database! Major error!");
+            echo "Error : " . $sql . "<br>" . $conn->error;
                 
-                }
+        }
+
     } else {
         ?><span class = "detail"> Sorry there was an error in uploading your file </span> <?php
     }
 }
 
 ?> 
-</div>
-</div>         
-            <div class="button btn-group-lg" align="center"><br>
-                <a href = "staff_update.php" name="submit" value="submit" type="submit" class="btn btn-success"> Update</a> &nbsp;&nbsp;&nbsp;
-                <a href = "staff_delete.php" name="submit" value="submit" type="submit" class="btn btn-danger"> Delete</a> &nbsp;&nbsp;&nbsp;
-                <a href = "staff_details.php" class="btn btn-info"> Details</a>
-            </div>
-       </div>
-   </div>
-</body>
-
-<div class ="box text-center">
-<div class="row">
-        <div class="column">
-            <span class = "detail"> &nbsp;&nbsp;&nbsp;Event name: </span><span class = "text">Freshy Night</span><br>
-            <span class = "detail">&nbsp;&nbsp;&nbsp;Event Date : </span><span class = "text">5th oct 2018</span><br>
-            <span class = "detail">&nbsp;&nbsp;&nbsp;Event Venue : </span><span class = "text">John Paul XXI</span><br>
-            <span class = "detail">&nbsp;&nbsp;&nbsp;Description: </span><span class = "text">It's a program for freshman from ID 591 where students get 
-                to eat, enjoy the show and also dance</span><br>  
-            <span class = "detail">&nbsp;&nbsp;&nbsp;link: </span><span class = "text"><a href = "https://www.w3schools.com/tags/att_input_type.asp">link</a></span><br><br>
-        </div>
-        <div class="column">
-            <img src = "http://www.au.edu/images/gallery//gallery2017/freshy2017/freshy2017-001.JPG" alt = "waikru" style="width:75%;">
-        </div>
-</div>
-<div class="button btn-group-lg" align="center"><br>
-<a href = "staff_update.php" name="submit" value="submit" type="submit" class="btn btn-success"> Update</a> &nbsp;&nbsp;&nbsp;
-                <button name="submit" value="submit" type="submit" class="btn btn-danger"> Delete</button> &nbsp;&nbsp;&nbsp;
-                <a href = "staff_details.php" class="btn btn-info"> Details</a>
-</div>
 </div>
 </div>
