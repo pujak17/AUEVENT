@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 
 <!DOCTYPE>
 <html>
@@ -25,7 +25,7 @@
         position: absolute;
         top: 8%;
         left: 50%;
-        transform: translate(-50%, -50%); 
+        transform: translate(-50%, -50%);
         z-index: 1;
 
     }
@@ -48,7 +48,7 @@
             padding-top: 10px;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); 
+            transform: translate(-50%, -50%);
             z-index: 2;
             text-align: center;}
         </style>
@@ -68,22 +68,19 @@
                         <h6><span class = "conform">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-outline-light btn-sm"> Log In </button></span></h6><br>
                     </form>
                     <form enctype="multipart/form-data" action="Staff_signupprocess.php" method="POST">
-
                         <span class = "info"> AU ID : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text" name = "userId"> </span><br><br>
                         <span class = "info"> Full Name : <input type = "text" name = "fullName"> </span><br><br>
                         <span class = "info"> email Id : <input type = "text" name = "email_Id"> </span><br><br>
                         <span class = "info"> phone Number: <input type = "text" name = "Phone_Number"> </span><br><br>
                         <span class = "info"> Password &nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" name = "password"> </span><br><br>
-                        
-                        
+
+
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button value="Upload" type = "submit" class="btn btn-success"> Signup </button><br>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
     </body>
 
     </html>
-
-    

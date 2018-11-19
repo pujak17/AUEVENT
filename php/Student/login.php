@@ -1,133 +1,116 @@
-<?php session_Start(); ?>
-
+<?php session_Start();?>
 <!DOCTYPE HTML>
-    <html>
-        <head>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html>
 
-       
-        <style>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
         body,html {
             height: 100%;
             margin: 0;
-            } 
-            .bg-image {
-  
+        }
+        .bg-image {
             background-image: url("http://photo.sunrisevietnam.com//2016/11/25/tl-1.jpg");
-              filter: blur(3px);
-              -webkit-filter: blur(3px);
-              height: 100%; 
-              background-position: center;
-              background-repeat: no-repeat;
-              background-size: cover;
-          }
-            .heading{color: #E5EDEE;
-            }
-            .title {color: #E76D3C;}
-            .info {color: #1B3963;}
-            .home {color: #DD2358;}
-            .fail {color: #D22743;}
-            .box {border-style:solid;
-                
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .heading{color: #E5EDEE;}
+        .title {color: #E76D3C;}
+        .info {color: #1B3963;}
+        .home {color: #DD2358;}
+        .fail {color: #D22743;}
+        .box {border-style:solid;
             background-color:rgb(229, 237, 238, 0.7);
             border-color: #F3C370;
             width:50%;
-            border-radius:5%;
+            border-radius:20px;
             margin:auto;
             padding-bottom: 30px;
             padding-top: 30px;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); 
+            transform: translate(-50%, -50%);
             z-index: 2;
             text-align: center;
         }
-            .account{color: #286610;}
-        </style>
-     </head>
-       
-        <body> 
+        .account{color: #286610;}
+    </style>
+</head>
+
+<body>
     <div class="bg-image"></div>
-    <div class = "fluid-container text-center";>
-
-    <div class = "box">
-    <h2 class= "heading"><span> AU EVENTS </span></h2>
-
-
-    <?php 
-
-    if(isset($_GET['submit'])) {
-        $ID = ($_GET['ID']);
-        $userName = ($_GET['userName']);
-        $userPassword = ($_GET['userPassword']);
-
-        
-        if($ID == " " || $userPassword == " ") {
+    <div class="fluid-container text-center" ;>
+        <div class="box">
+            <h2 class="heading"><span> AU EVENTS </span></h2>
+            <?php
+include 'include.php';
+if (isset($_GET['submit'])) {
+    $Student_Id = $_GET['ID'];
+    $Student_password = $_GET['userPassword'];
+    if ($Student_Id == "" || $Student_password == "") {
         ?>
-            <h5><span class = "fail"> Either the username or password that you typed in is empty </span></h5><br/>
-            <form action ="signup.php" method = "GET">
-                <button value="Upload" type = "submit" class="btn btn-info"> Go back? </button>
+            <h5><span class="fail"> Either the username or password that you typed in is empty </span></h5><br />
+            <form action="login.php" method="GET">
+                <button value="Upload" type="submit" class="btn btn-info"> Go back? </button>
             </form>
-    <?php
-        } else {
-             $sql = "SELECT * FROM profilePage WHERE ID = '$ID' AND userPassword = '$userPassword'";
-                $result = $conn->query($sql);
-                $row = mysqli_fetch_assoc($result);
-                //print_r($row);
-                if(is_array($row) && !empty($row)) {
-                    $validUser = $row['ID'];
-                    $_SESSION['valid'] = $validUser;
-                    //$_SESSION['userName'] = $row['userName'];
-                    $_SESSION['userPassword'] = $row['userPassword'];
-                ?>
-                <span class = "success"> You have logged in succesfully!! <?php echo ($row['userName']) ?></span><br>
-                <?php
-
-            } else {
-                
-                ?>
-                <h3><span class = "fail"> ERROR!</span><br></h3>
-                <span class = "info"> The user name or the password that you typed in is incorrect! Please try again!!</span><br><br>
-                <form action ="login1.php" method = "GET">
-                    <button value="Upload" type = "submit" class="btn btn-info"> Go back? </button>
-                  </form>
-                <?php
-
-
-            } if(isset($_SESSION['valid'])) {
+            <?php
+} else {
+        $Student_Id = $_GET['ID'];
+        $Student_password = $_GET['userPassword'];
+        $sql = "SELECT * FROM STUDENT WHERE Student_Id = '$Student_Id' AND Student_password = '$Student_password'";
+        $result = $conn->query($sql) or die(mysql_error());
+        $row = mysqli_fetch_assoc($result);
+        if (is_array($row) && !empty($row)) {
+            $validUser = $row['Student_Id'];
+            $_SESSION['valid'] = $validUser;
+            $_SESSION['Student_password'] = $row['Student_password'];
+            $Full_name = $row['Full_name']
+            ?>
+            <span class="success"> You have logged in succesfully!!
+                <?php echo ($row['Full_name']) ?></span><br>
+            <?php
+} else {?>
+            <h3><span class="fail"> ERROR!</span><br></h3>
+            <span class="info"> The user name or the password that you typed in is incorrect! Please try again!!</span><br><br>
+            <form action="login.php" method="GET">
+                <button value="Upload" type="submit" class="btn btn-info"> Go back? </button>
+            </form>
+            <?php
+}
+        if (is_array($row) && !empty($row)) {
+            if (isset($_SESSION['valid'])) {
                 header('Location: loginProcess.php');
-            
             }
-
-            
         }
-
-    } else {
-        ?>
-        <a href="login1.php">
-        <img src="https://registrar.au.edu/wp-content/uploads/2017/01/ABAC_logo_footer_white.png" alt="HOME" style="width:62px;height:62px;border:0;"></a><br>
-        
-        <br><h2><span class = "title"> LOG IN </span></h2><br>
-        <img src ="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" height="70" width="70" alt = "account"><br><br>
-
-        <form action = "home.php" method = "GET" name = "login">
-        <span class = "info">AU ID &nbsp;&nbsp;&nbsp; : <input type = "text" name = "ID"></span><br><br>
-        <span class = "info">Password : <input type = "text" name = "userPassword"></span><br><br>
-        <p><span class = "account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button name = "submit" value ="submit" type = "submit" class="btn btn-primary"> Log In </button><br><br><br>
-        </form>
-        <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.php" class="btn btn-outline-danger btn-sm"> + New Account</a></div>
-        <p><span class = "fail">&nbsp;&nbsp;&nbsp; New to the place? </span></p>
-        
-        <?php 
     }
-    ?>
+} else {?>
+            <a href="login.php">
+                <img src="https://registrar.au.edu/wp-content/uploads/2017/01/ABAC_logo_footer_white.png" alt="HOME"
+                    style="width:62px;height:62px;border:0;"></a><br>
+            <br>
+            <h2><span class="title"> LOG IN </span></h2><br>
+            <img src="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" height="70" width="70" alt="account"><br><br>
+            <form action="" method="GET" name="login">
+                <span class="info">AU ID &nbsp;&nbsp;&nbsp; : <input type="text" name="ID"></span><br><br>
+                <span class="info">Password : <input type="text" name="userPassword"></span><br><br>
+                <p><span class="account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button name="submit" value="submit" type="submit" class="btn btn-primary">
+                    Log In </button><br><br><br>
+            </form>
+            <div class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.php" class="btn btn-outline-danger btn-sm">
+                    + New Account</a></div>
+            <p><span class="fail">&nbsp;&nbsp;&nbsp; New to the place? </span></p>
+            <?php
+}
+?>
+        </div>
     </div>
-    </div>
-    </body>
-    </html>
+</body>
 
-    
-
-
+</html>
