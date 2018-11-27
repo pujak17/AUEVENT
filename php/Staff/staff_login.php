@@ -109,8 +109,8 @@ if (isset($_GET['submit'])) {
             <h2><span class="title"> LOG IN </span></h2><br>
             <img src="https://www.freeiconspng.com/uploads/account-profile-icon-1.png" height="70" width="70" alt="account"><br><br>
             <form action="" method="GET" name="login">
-                <span class="info">AU ID &nbsp;&nbsp;&nbsp; : <input type="text" name="Admin_Id"></span><br><br>
-                <span class="info">Password : <input type="text" name="Admin_password"></span><br><br>
+                <span class="info">AU ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp <input type="text" name="Admin_Id"></span><br><br>
+                <span class="info">Password : &nbsp;<input type="text" name="Admin_password"></span><br><br>
                 <p><span class="account">&nbsp;&nbsp;&nbsp; Already have an account? </span></p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button name="submit" value="submit" type="submit" class="btn btn-primary">
                     Log In </button><br><br><br>

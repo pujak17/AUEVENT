@@ -15,6 +15,12 @@
 ?>      
   
 <style>
+.main {
+     margin-left: 300px; /* Same as the width of the sidenav */
+     font-size: 20px; /* Increased text to enable scrolling */
+     padding: 0px 50px;
+     
+ }
 .Name{color : #EC7063;
     font-weight: bold;
     font-size: 20px;}
@@ -37,6 +43,25 @@
     font-size: 20px;
 
 }
+.box{
+    font-size: 150%;
+    border-style: solid;
+    background-color:rgb(247, 244, 244, 0.7);
+    border-color:  rgb(232, 220, 220, 0.6);
+    width:100%;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-left:0px;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
+
 </style>
 <div class="main">
 <div class="Name" align="center"><br><br><br>
@@ -56,7 +81,7 @@
 <?php 
 $sqli = "SELECT * FROM EVENT ORDER BY Date_create DESC LIMIT 10"; 
 $resulti = $conn->query($sqli);
-$IDi = $rowi['Event_Id'];
+
 while ($rowi = mysqli_fetch_array($resulti)) { ?>
 <div class ="box text-center">
 <span class = "font1"> <?php echo $rowi['Date_create']; ?></span>
@@ -75,7 +100,7 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
      <div class="column">
      <td><img class = "resize" src="../staff/uploads/<?php echo $upload ?>"> 
      <?php      
-                                $sqli0 = "SELECT * FROM MANDATORY WHERE Event_Id='$Event_Id' ORDER BY date_create"; 
+                                $sqli0 = "SELECT * FROM MANDATORY WHERE Event_Id='$Event_Id'"; 
                                 $resulti0 = $conn->query($sqli0);
                                 $rowi0 = mysqli_fetch_assoc($resulti0);
                                 if($rowi0 != ""){
@@ -129,10 +154,11 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
                                 <span class = "info"> Entrance cost: </span><span class = "text"><?php echo ($rowi4['Entrance_cost']);?><br> 
                                 <?php 
                                 } 
-                                ?>    
+                                ?>  
+                                
 </div>
 </div>
 </div>
 <?php }
-    echo ('invalid ');
+
 }?>

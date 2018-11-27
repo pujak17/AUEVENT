@@ -161,7 +161,13 @@ if(isset($_SESSION['valid'])) {
 		    border: 1px solid #ccc;
 		    border-radius: 4px;
 		    resize: vertical;
-		  }
+			}
+			.main {
+     	margin-left: 200px; /* Same as the width of the sidenav */
+     	font-size: 20px; /* Increased text to enable scrolling */
+     	padding: 0px 50px;
+     
+ 			}
 
 		  input[type=date]{
 		    width: 100%;
@@ -237,7 +243,7 @@ if(isset($_SESSION['valid'])) {
           <label>Event Date:</label>
         </div>
         <div class="col-75">
-          <input type="date" name="eventDate" class = "event_date" value = "<?php  echo $row['Event_date']; ?>">
+          <input type="date" name="eventDate" class = "event_date" value = "<?php  echo $Event_date; ?>">
         </div>
       </div>
       <div class="row">
@@ -377,12 +383,12 @@ if(isset($_SESSION['valid'])) {
 		          <label>Select image to upload:</label>
 		        </div>
 		        <div class="col-75">
-		          <input type="file" name="fileToUpload" id="fileToUpload">
+		          <input type="file" name="fileToUpload" id="fileToUpload" >
 		        </div>
 		      </div>
 		      <div class="row"><br>
 		        <a href = "staff_home.php"  class="btn btn-lg btn-danger" disabled="disabled" style="margin-right: 30px; float: right; ">Cancel</a>
-            <button value = "Upload file " type = "submit" class="btn btn-lg btn-success" style="margin-right: 30px;float: right;"> Upload </button>
+            <button value = "Upload file " type = "submit" class="btn btn-lg btn-success" style="margin-right: 30px;float: right;"> Update details </button>
 
 		      </div>
 		    </form>

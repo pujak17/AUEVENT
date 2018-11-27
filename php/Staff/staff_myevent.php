@@ -11,6 +11,23 @@
     font-size: 20px;
 
 }
+.box{
+    font-size: 150%;
+    border-style: solid;
+    background-color:rgb(247, 244, 244, 0.7);
+    border-color:  rgb(232, 220, 220, 0.6);
+    width:70%;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-left:320px;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
 
 </style>
 <?php
@@ -50,7 +67,7 @@
                         <span class = "detail"> Event Time: </span><span class = "text"><?php echo $row['Event_time']; ?> </span><br>
                         <span class = "detail"> Event Date: </span><span class = "text"><?php echo $row['Event_date']; ?> </span><br>
                         <span class = "detail"> Event Description: </span><span class = "text"><?php echo $row['Event_description']; ?> </span><br>
-                        <span class = "detail"> Event link: </span> <span class = "text"><a href="<?php echo $rowi['Event_link'];?>"><?php echo $rowi['Event_link'];?></a></span> <?php
+                        <span class = "detail"> Event link: </span> <span class = "text"><a href="<?php echo $row['Event_link'];?>"><?php echo $row['Event_link'];?></a></span> <?php
                         $Event_Id = $row['Event_Id'];
 
                         $upload =   $row['Event_photo'];
@@ -63,17 +80,32 @@
                                 $sqli = "SELECT * FROM MANDATORY WHERE Event_Id='$Event_Id'"; 
                                 $resulti = $conn->query($sqli);
                                 $rowi = mysqli_fetch_assoc($resulti);
+
+                                $sqli1 = "SELECT * FROM VOLUNTEER WHERE Event_Id='$Event_Id'"; 
+                                $resulti1 = $conn->query($sqli1);
+                                $rowi1 = mysqli_fetch_assoc($resulti1);
+
+                                $sqli2 = "SELECT * FROM OTHERS WHERE Event_Id='$Event_Id'"; 
+                                $resulti2 = $conn->query($sqli2);
+                                $rowi2 = mysqli_fetch_assoc($resulti2);
+
+                                $sqli3 = "SELECT * FROM FACULTY WHERE Event_Id='$Event_Id'"; 
+                                $resulti3 = $conn->query($sqli3);
+                                $rowi3 = mysqli_fetch_assoc($resulti3); 
+
+                                $sqli4 = "SELECT * FROM ENTERTAINMENT WHERE Event_Id='$Event_Id'"; 
+                                $resulti4 = $conn->query($sqli4);
+                                $rowi4 = mysqli_fetch_assoc($resulti4);
+
                                 if($rowi != ""){
                                 ?>
                                 <br><br><br>
                                 <span class = "info"> Event Type: </span><span class = "font">Mandatory<br> 
                                 <span class = "info"> Dress Code: </span><span class = "text"><?php echo ($rowi['Dress_code']);?><br>
                                 <?php
-                                }
+                                } 
                                 
-                                $sqli1 = "SELECT * FROM VOLUNTEER WHERE Event_Id='$Event_Id'"; 
-                                $resulti1 = $conn->query($sqli1);
-                                $rowi1 = mysqli_fetch_assoc($resulti1);
+                                
                                 if($rowi1 != ""){
                                 ?>
                                 <br><br><br>
@@ -82,9 +114,6 @@
                                 <?php
                                 }
 
-                                $sqli2 = "SELECT * FROM OTHERS WHERE Event_Id='$Event_Id'"; 
-                                $resulti2 = $conn->query($sqli2);
-                                $rowi2 = mysqli_fetch_assoc($resulti2);
                                 if($rowi2 != ""){
                                 ?>
                                 <br><br><br>
@@ -93,9 +122,7 @@
                                 <?php
                                 }
 
-                                $sqli3 = "SELECT * FROM FACULTY WHERE Event_Id='$Event_Id'"; 
-                                $resulti3 = $conn->query($sqli3);
-                                $rowi3 = mysqli_fetch_assoc($resulti3);
+                              
                                 if($rowi3 != ""){ 
                                 ?>
                                 <br><br><br>
@@ -104,16 +131,15 @@
                                 <?php
                                 }
                                 
-                                $sqli4 = "SELECT * FROM ENTERTAINMENT WHERE Event_Id='$Event_Id'"; 
-                                $resulti4 = $conn->query($sqli4);
-                                $rowi4 = mysqli_fetch_assoc($resulti4);
+                          
                                 if($rowi4 != ""){ 
                                 ?>
                                 <br><br><br>
                                 <span class = "info"> Event Type: </span><span class = "font">Entertainment<br> 
                                 <span class = "info"> Entrance cost: </span><span class = "text"><?php echo ($rowi4['Entrance_cost']);?><br> 
                                 <?php 
-                                } 
+                                
+                                }
                                 ?>
                     </div>
             </div>

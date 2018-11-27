@@ -24,7 +24,7 @@
 
 }
 .resize {
-    width: 200px;
+    width: 300px;
     height: auto;
   }
 .Name{color : #EC7063;

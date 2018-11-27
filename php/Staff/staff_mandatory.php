@@ -15,6 +15,30 @@
 ?>      
   
 <style>
+.main {
+     margin-left: 100px; /* Same as the width of the sidenav */
+     font-size: 20px; /* Increased text to enable scrolling */
+     padding: 0px 50px;
+     
+ }
+.box{
+    font-size: 150%;
+    border-style: solid;
+    background-color:rgb(247, 244, 244, 0.7);
+    border-color:  rgb(232, 220, 220, 0.6);
+    width:70%;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-left:230px;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
 .Name{color : #EC7063;
     font-weight: bold;
     font-size: 20px;}

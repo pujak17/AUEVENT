@@ -9,7 +9,7 @@ if(isset($_SESSION['valid'])) {
         if (isset($_GET['myevent'])) {
           $Event_Id = $_GET['myevent'];
           $sql = "INSERT INTO ATTENDS (Student_Id, Event_Id)
-          VALUES ($ID, $Event_Id)";
+          VALUES ('$ID', '$Event_Id')";
 
         if($conn->query($sql) === TRUE) {
             echo "<br> new record has been created successfully<br><br>";

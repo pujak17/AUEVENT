@@ -99,11 +99,11 @@
         </form>
         <form enctype="multipart/form-data" action="signupprocess.php" method="POST">
 
-            <span class="info"> AU ID : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="info"> AU ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
             <input type="text" name="userId"> </span><br><br>
-            <span class="info"> Full Name : <input type="text" name="fullName"> </span><br><br>
-            <span class="info"> Password &nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="password"> </span><br><br>
-            <span class="option">Faculty:&nbsp;&nbsp;&nbsp;&nbsp;  <select name="faculty">
+            <span class="info"> Full Name &nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="fullName"> </span><br><br>
+            <span class="info"> Password &nbsp;&nbsp;&nbsp;: <input type="text" name="password"> </span><br><br>
+            <span class="option">Faculty&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  <select name="faculty">
                             <option value="Architecture">Architecture</option>
                             <option value="Arts">Arts</option>
                             <option value="BBA">BBA</option>

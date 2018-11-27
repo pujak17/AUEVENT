@@ -116,7 +116,12 @@ if(isset($_SESSION['valid'])) {
 		    resize: vertical;
 
 		  }
-
+      .main {
+     margin-left: 100px; /* Same as the width of the sidenav */
+     font-size: 20px; /* Increased text to enable scrolling */
+     padding: 0px 50px;
+     
+ }
 		  input[type=url]{
 		    width: 100%;
 		    padding: 12px;

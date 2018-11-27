@@ -8,6 +8,24 @@
     font-weight: bold;
     font-size: 20px
 }
+.box{
+    font-size: 150%;
+    border-style: solid;
+    background-color:rgb(247, 244, 244, 0.7);
+    border-color:  rgb(232, 220, 220, 0.6);
+    width:70%;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-left:300px;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
 </style>
 <?php session_start();?><?php 
 if(isset($_SESSION['valid'])) {
@@ -32,7 +50,7 @@ if(isset($_SESSION['valid'])) {
     $about = $_POST["About"];
     $faculty_type = $_POST["faculty"];
 
-    ?><br><br><br><div class ="box" align = "center"> <?php
+    ?><br><br><br><br><br><br><br><br><br><div class ="box" align = "center"> <?php
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
@@ -65,60 +83,416 @@ if(isset($_SESSION['valid'])) {
                 ?> <h3><span class = "success">  Event has been updated successfully  </span></h3>
                 <?php
                     if ($event_type == 'Mandatory') {
+                        $sqli = "SELECT * FROM MANDATORY WHERE Event_Id = $Event_Id";
+                        $resulti = $conn->query($sqli) or die(mysql_error());
+                        $rowi = mysqli_fetch_assoc($resulti);
+                        $NewEvent = $rowi['Event_Id'];
+
+                        if(!empty($NewEvent)){
+                        $sqli2 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                        $sqli2 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                        $sqli2 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                        $sqli2 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                        if ($conn->query($sqli2) === TRUE) {
+                            ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                        <?php
+                        } else {
+
+                            echo "Error: ". $sqli2 . "<br" . $conn->error;
+                        }
+
                         $sql = "UPDATE MANDATORY SET  Dress_code = '$dress_code' WHERE Event_Id = $Event_Id";
-    
                             if ($conn->query($sql) === TRUE) {
                                 ?> <h3><span class = "success1">  Event has been updated into Mandatory </span></h3>
-                               <?php
+                            <?php
                             } else {
-    
+
                                 echo "Error: ". $sql . "<br" . $conn->error;
                             }
+
+                        } else {
+                            $sqli2 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                            $sqli2 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                            $sqli2 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                            $sqli2 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                            if ($conn->query($sqli2) === TRUE) {
+                                ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                            <?php
+                            } else {
+    
+                                echo "Error: ". $sqli2 . "<br" . $conn->error;
+                            }
+    
+                        $sqli1 = "INSERT INTO MANDATORY (Event_Id, Dress_code)
+                        VALUES ('$Event_Id', '$dress_code')";
+                        if ($conn->query($sqli1) === TRUE) {
+                                ?> <h3><span class = "success1">  Event has been Inserted into Mandatory </span></h3>
+                            <?php
+                            } else {
+
+                                echo "Error: ". $sqli1 . "<br" . $conn->error;
+                            }
+                            
+                        }
+                            
                         
                      } else if ($event_type == 'Entertainment'){
+                        $sqli = "SELECT * FROM ENTERTAINMENT WHERE Event_Id = $Event_Id";
+                        $resulti = $conn->query($sqli) or die(mysql_error());
+                        $rowi = mysqli_fetch_assoc($resulti);
+                        $NewEvent = $rowi['Event_Id'];
 
-                        $sql = "UPDATE ENTERTAINMENT SET  Entrance_cost = '$enterance_cost' WHERE Event_Id = $Event_Id";
+                            if(!empty($NewEvent)){
+                                $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli2) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from MANDATORY</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli2 . "<br" . $conn->error;
+                                }
+                                $sqli3 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli3) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from VOLUNTEER</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli3 . "<br" . $conn->error;
+                                }
+                                $sqli4 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli4) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from OTHERS</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli4 . "<br" . $conn->error;
+                                }
+                                $sqli5 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli5) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from FACULTY</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli5 . "<br" . $conn->error;
+                                }
+                                $sql = "UPDATE ENTERTAINMENT SET  Entrance_cost = '$enterance_cost' WHERE Event_Id = $Event_Id";
+                                if ($conn->query($sql) === TRUE) {
+                                    ?> <h3><span class = "success1"> Event has been updated into Entertainment  </span></h3>
+                                    <?php
+                                } else {
+            
+                                    echo "Error: ". $sql . "<br" . $conn->error;
+                                }
+                            } else {
+
+                                $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli2) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from MANDATORY</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli2 . "<br" . $conn->error;
+                                }
+                                
+                                $sqli3 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli3) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from VOLUNTEER</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli3 . "<br" . $conn->error;
+                                }
+                                
+                                $sqli4 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli4) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from OTHERS</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli4 . "<br" . $conn->error;
+                                }
+                                
+                                $sqli5 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli5) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from FACULTY</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli5 . "<br" . $conn->error;
+                                }
+                                
+                                $sqli1 = "INSERT INTO ENTERTAINMENT (Event_Id, Entrance_cost)
+                                VALUES ('$Event_Id', '$enterance_cost')";
+                                if ($conn->query($sqli1) === TRUE) {
+                                    ?> <h3><span class = "success1">  Event has been Inserted into Entertainment</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli1 . "<br" . $conn->error;
+                                }
+                                
+                        
+                            }
     
-                        if ($conn->query($sql) === TRUE) {
-                            ?> <h3><span class = "success1"> Event has been updated into Entertainment  </span></h3>
-                            <?php
-                        } else {
-    
-                            echo "Error: ". $sql . "<br" . $conn->error;
-                        }
+                      
     
                      } else if ($event_type == 'Volunteer') {
-                        $sql = "UPDATE VOLUNTEER SET  Required_number = '$required_number' WHERE Event_Id = $Event_Id";
+                        $sqli = "SELECT * FROM VOLUNTEER WHERE Event_Id = $Event_Id";
+                        $resulti = $conn->query($sqli) or die(mysql_error());
+                        $rowi = mysqli_fetch_assoc($resulti);
+                        $NewEvent = $rowi['Event_Id'];
+                        if(!empty($NewEvent)){
+                                $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli2) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from MANDATORY</span></h3>
+                                <?php
+                                } else {
 
+                                    echo "Error: ". $sqli3 . "<br" . $conn->error;
+                                }
+                                $sqli3 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli3) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from MANDATORY</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli3 . "<br" . $conn->error;
+                                }
+                                $sqli4 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli4) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from MANDATORY</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli4 . "<br" . $conn->error;
+                                }
+                                $sqli5 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli5) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from MANDATORY</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli5 . "<br" . $conn->error;
+                                }
+                            
+                                $sql = "UPDATE VOLUNTEER SET  Required_number = '$required_number' WHERE Event_Id = $Event_Id";
     
-                        if ($conn->query($sql) === TRUE) {
-                          ?> <h3><span class = "success1"> Event has been updated into Volunteer </span></h3>
-                          <?php
-                        } else {
-    
-                            echo "Error: ". $sql . "<br" . $conn->error;
-                        }
-                     
+                                if ($conn->query($sql) === TRUE) {
+                                ?> <h3><span class = "success1"> Event has been updated into Volunteer </span></h3>
+                                <?php
+                                } else {
+            
+                                    echo "Error: ". $sql . "<br" . $conn->error;
+                                }
+                            
+                            } else {
+                                $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                                $sqli3 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                                $sqli4 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                                $sqli5 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                                if ($conn->query($sqli2) === TRUE) {
+                                    ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                                <?php
+                                } else {
+
+                                    echo "Error: ". $sqli2 . "<br" . $conn->error;
+                                }
+                               $sqli1 = "INSERT INTO VOLUNTEER (Event_Id, Required_number)
+                                 VALUES ('$Event_Id', '$required_number')";
+                                if ($conn->query($sqli1) === TRUE) {
+                                ?> <h3><span class = "success1">  Event has been Inserted into Volunteer </span></h3>
+                                 <?php
+                                }else{
+
+                                     echo "Error: ". $sqli1 . "<br" . $conn->error;
+                                }
+                            
+                            }
+
                      } else if ($event_type == 'Others') {
-                        $sql = "UPDATE OTHERS SET  About = '$about' WHERE Event_Id = $Event_Id";
+                        $sqli = "SELECT * FROM OTHERS WHERE Event_Id = $Event_Id";
+                        $resulti = $conn->query($sqli) or die(mysql_error());
+                        $rowi = mysqli_fetch_assoc($resulti);
+                        $NewEvent = $rowi['Event_Id'];
 
-                        if ($conn->query($sql) === TRUE) {
-                            ?> <h3><span class = "success1"> Event has been updated into Other </span></h3>
+                        if(!empty($NewEvent)){
+                       
+                                $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli2) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli2 . "<br" . $conn->error;
+                                    }
+                                $sqli3 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli3) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli3 . "<br" . $conn->error;
+                                    }
+                                $sqli4 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli4) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli4 . "<br" . $conn->error;
+                                    }
+                                $sqli5 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli5) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli5 . "<br" . $conn->error;
+                                    }
+
+                                $sql = "UPDATE OTHERS SET  About = '$about' WHERE Event_Id = $Event_Id";
+                                    if ($conn->query($sql) === TRUE) {
+                                        ?> <h3><span class = "success1"> Event has been updated into Other </span></h3>
+                                        <?php
+                                    } else {
+                
+                                        echo "Error: ". $sql . "<br" . $conn->error;
+                                    } 
+                        } else {
+                            $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                            if ($conn->query($sqli2) === TRUE) {
+                                ?> <h3><span class = "success1">  deleted from ALL</span></h3>
                             <?php
-                        } else {
-    
-                            echo "Error: ". $sql . "<br" . $conn->error;
+                            } else {
+
+                                echo "Error: ". $sqli2 . "<br" . $conn->error;
+                            }
+                            $sqli3 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                            if ($conn->query($sqli3) === TRUE) {
+                                ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                            <?php
+                            } else {
+
+                                echo "Error: ". $sqli3 . "<br" . $conn->error;
+                            }
+                            $sqli4 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                            if ($conn->query($sqli4) === TRUE) {
+                                ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                            <?php
+                            } else {
+
+                                echo "Error: ". $sqli4 . "<br" . $conn->error;
+                            }
+                             $sqli5 = "DELETE FROM FACULTY WHERE Event_Id = '$Event_Id'";
+                            if ($conn->query($sqli5) === TRUE) {
+                                ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                            <?php
+                            } else {
+
+                                echo "Error: ". $sqli5 . "<br" . $conn->error;
+                            }
+                           $sqli1 = "INSERT INTO OTHERS (Event_Id,  About)
+                             VALUES ('$Event_Id', '$about')";
+                            if ($conn->query($sqli1) === TRUE) {
+                            ?> <h3><span class = "success1">  Event has been Inserted into Others </span></h3>
+                             <?php
+                            }else{
+
+                                 echo "Error: ". $sqli1 . "<br" . $conn->error;
                         }
-                     } else if ($event_type == 'Faculty') {
-                        $sql = "UPDATE OTHERS SET  Faculty_type = '$faculty_type' WHERE Event_Id = $Event_Id";
-    
-                        if ($conn->query($sql) === TRUE) {
-                            ?> <h3><span class = "success1"> Event has been updated into Faculty </span></h3>
-                           <?php
+                     } 
+                    }else if ($event_type == 'Faculty') {
+                        $sqli = "SELECT * FROM OTHERS WHERE Event_Id = $Event_Id";
+                        $resulti = $conn->query($sqli) or die(mysql_error());
+                        $rowi = mysqli_fetch_assoc($resulti);
+                        $NewEvent = $rowi['Event_Id'];
+
+                        if(!empty($NewEvent)){
+                       
+                                $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli2) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from MANDATORY</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli2 . "<br" . $conn->error;
+                                    }
+                                $sqli3 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli3) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from ENTERTAINMENT</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli3 . "<br" . $conn->error;
+                                    }
+                                $sqli4 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli4) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from VOLUNTEER</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli4 . "<br" . $conn->error;
+                                    }
+                                $sqli5 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                                    if ($conn->query($sqli5) === TRUE) {
+                                        ?> <h3><span class = "success1">  deleted from OTHERS</span></h3>
+                                    <?php
+                                    } else {
+
+                                        echo "Error: ". $sqli5 . "<br" . $conn->error;
+                                    }
+
+                                    $sql = "UPDATE FACULTY SET  Faculty_type = '$faculty_type' WHERE Event_Id = $Event_Id";
+                                    if ($conn->query($sql) === TRUE) {
+                                        ?> <h3><span class = "success1"> Event has been updated into Faculty </span></h3>
+                                    <?php
+                                    } else {
+                
+                                        echo "Error: ". $sql . "<br" . $conn->error;
+                                    } 
+                    } else {
+                        $sqli2 = "DELETE FROM MANDATORY WHERE Event_Id = '$Event_Id'";
+                        if ($conn->query($sqli2) === TRUE) {
+                            ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                        <?php
                         } else {
-    
-                            echo "Error: ". $sql . "<br" . $conn->error;
+
+                            echo "Error: ". $sqli2 . "<br" . $conn->error;
                         }
+                        $sqli3 = "DELETE FROM ENTERTAINMENT WHERE Event_Id = '$Event_Id'";
+                        if ($conn->query($sqli3) === TRUE) {
+                            ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                        <?php
+                        } else {
+
+                            echo "Error: ". $sqli3 . "<br" . $conn->error;
+                        }
+                        $sqli4 = "DELETE FROM VOLUNTEER WHERE Event_Id = '$Event_Id'";
+                        if ($conn->query($sqli4) === TRUE) {
+                            ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                        <?php
+                        } else {
+
+                            echo "Error: ". $sqli4 . "<br" . $conn->error;
+                        }
+                         $sqli5 = "DELETE FROM OTHERS WHERE Event_Id = '$Event_Id'";
+                        if ($conn->query($sqli5) === TRUE) {
+                            ?> <h3><span class = "success1">  deleted from ALL</span></h3>
+                        <?php
+                        } else {
+
+                            echo "Error: ". $sqli5 . "<br" . $conn->error;
+                        }
+                       $sqli1 = "INSERT INTO FACULTY (Event_Id, Faculty_type)
+                         VALUES ('$Event_Id', '$faculty_type')";
+                        if ($conn->query($sqli1) === TRUE) {
+                        ?> <h3><span class = "success1">  Event has been Inserted into Faculty</span></h3>
+                         <?php
+                        }else{
+
+                             echo "Error: ". $sqli1 . "<br" . $conn->error;
+                    }
+                 } 
                      } ?>
                      <br> <a href="staff_myevent.php" class="btn btn-success btn-lg active"> Go to My Events</a>
                      <?php

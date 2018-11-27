@@ -11,6 +11,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
+.resize {
+    width: 300px;
+    height: auto;
+  }
 body {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     background-color: rgb(244, 235, 235, 0.3);

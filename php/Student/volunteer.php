@@ -123,13 +123,17 @@ $IDi = $rowi['Event_Id'];?>
                               ?>
 </div>
 </div>
-<?php $sqli5 = "SELECT * FROM ATTENDS WHERE Event_Id='$Event_Id'"; 
+<?php $sqli5 = "SELECT * FROM ATTENDS WHERE Event_Id='$Event_Id' AND Student_Id = '$ID'"; 
                                 $resulti5 = $conn->query($sqli5);
                                 $rowi5 = mysqli_fetch_assoc($resulti5);
                                 $StudentId = $rowi5['Student_Id'];
                                 $EventId = $rowi5['Event_Id']; 
-
-                                if($ID = $StudentId && $Event_Id = $EventId) {
+                                 //echo ('new SI'. $StudentId);
+                                 //echo ('new EI'. $EventId);
+                                 //echo ('OLD SI'. $ID);
+                                 //echo ('OLD EI'. $Event_Id);
+                                 //exit;
+                                if($ID == $StudentId && $Event_Id == $EventId) {
                                 ?><br><br>
 
                                 
@@ -139,5 +143,4 @@ $IDi = $rowi['Event_Id'];?>
                                 <?php }?>
 </div>
 <?php }
-    echo ('invalid ');
 }?>

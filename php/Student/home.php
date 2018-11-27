@@ -24,7 +24,7 @@
 
 }
 .resize {
-    width: 200px;
+    width: 300px;
     height: auto;
   }
 .Name{color : #EC7063;
@@ -90,7 +90,7 @@
 </div>
 
 <?php 
-$sqli = "SELECT * FROM EVENT ORDER BY Date_create DESC LIMIT 10"; 
+$sqli = "SELECT * FROM EVENT ORDER BY Date_create DESC"; 
 $resulti = $conn->query($sqli);
 $IDi = $rowi['Event_Id'];
 while ($rowi = mysqli_fetch_array($resulti)) { ?>
@@ -113,7 +113,7 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
      <div class="column">
      <td><img class = "resize" src="../staff/uploads/<?php echo $upload ?>"> 
      <?php      
-                                $sqli0 = "SELECT * FROM MANDATORY WHERE Event_Id='$Event_Id' ORDER BY date_create"; 
+                                $sqli0 = "SELECT * FROM MANDATORY WHERE Event_Id='$Event_Id'"; 
                                 $resulti0 = $conn->query($sqli0);
                                 $rowi0 = mysqli_fetch_assoc($resulti0);
                                 if($rowi0 != ""){
@@ -173,17 +173,17 @@ while ($rowi = mysqli_fetch_array($resulti)) { ?>
     
     </div>                     
             
-                                <?php $sqli5 = "SELECT * FROM ATTENDS WHERE Event_Id='$Event_Id'"; 
+                                <?php $sqli5 = "SELECT * FROM ATTENDS WHERE Event_Id='$Event_Id' AND Student_Id = '$ID'"; 
                                 $resulti5 = $conn->query($sqli5);
                                 $rowi5 = mysqli_fetch_assoc($resulti5);
                                 $StudentId = $rowi5['Student_Id'];
-                                $EventId = $rowi5['Event_Id']; 
+                                $EventId =  $rowi5['Event_Id'];
 
-                                if($ID = $StudentId && $Event_Id = $EventId) {
+                                if($ID == $StudentId && $Event_Id == $EventId) {
                                 ?><br><br>
 
                                 
-                                <a href="#" class="btn btn-warning btn-lg disabled" role="button" aria-disabled="true">Attending</a>
+                                <a href="#" class="btn btn-info btn-lg disabled" role="button" aria-disabled="true">Attending</a>
                                 <?php } else { ?>
                                 <a href="Insert.php?myevent=<?php echo $rowi['Event_Id']; ?>" type="button" class = "btn btn-lg btn-success">Attend</a>  
                                 <?php }?>

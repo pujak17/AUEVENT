@@ -43,7 +43,7 @@ body {
 
 }
 .resize {
-    width: 200px;
+    width: 300px;
     height: auto;
   }
 
@@ -71,7 +71,7 @@ body {
 .column {
     float: left;
     width: 50px;
-    padding: 15px;
+    
   }
   
   /* Clear floats after image containers */
@@ -80,7 +80,7 @@ body {
     clear: both;
     display: table;
   }
-.box{
+  .box{
     font-size: 150%;
     border-style: solid;
     background-color:rgb(247, 244, 244, 0.7);
@@ -90,9 +90,14 @@ body {
     margin-top: 30px;
     padding-bottom: 50px;
     padding-top: 50px;
-
-    margin-left:20px;
+    margin-left:230px;
 }
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
 
 .menu {
     border-style: solid;
@@ -171,7 +176,7 @@ body {
     height: 1000px;
   }
  .main {
-     margin-left: 100px; /* Same as the width of the sidenav */
+     margin-left: 500px; /* Same as the width of the sidenav */
      font-size: 20px; /* Increased text to enable scrolling */
      padding: 0px 50px;
      
